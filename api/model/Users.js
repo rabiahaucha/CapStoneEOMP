@@ -87,7 +87,7 @@ fetchUsers(req, res){
         })
     }
  }
-    async register(req ,res){
+    async registerUser(req ,res){
     const data = req.body
     data.userPass = await hash(data.userPass,15)
     const user = {
