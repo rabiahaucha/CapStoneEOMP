@@ -30,7 +30,7 @@ app.use(
 
 routes.get('^/$|/fullstack', (req, res) =>{
     res.sendFile(path.resolve(__dirname, 
-        './static/html/Admin.html'))
+        './static/html/index.html'))
 })
 
 app.listen(port, ()=>{
