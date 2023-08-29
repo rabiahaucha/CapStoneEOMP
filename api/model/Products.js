@@ -3,7 +3,7 @@ class Products{
 fetchProducts(req, res){
     const query = `
     SELECT prodID, prodName,
-    quantity, amount, Category,
+    amount, Category,
     prodUrl
     FROM Products;
     `
@@ -19,9 +19,9 @@ fetchProducts(req, res){
  fetchProduct(req,res){
     const query = `
     SELECT prodID, prodName,
-    quantity, amount, Category,
+    amount, Category,
     prodUrl
-    FROM Products;
+    FROM Products
     WHERE prodID = ${req.params.id};
     `
     const id = req.params.id
