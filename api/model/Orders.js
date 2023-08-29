@@ -4,7 +4,7 @@ const {createToken} = require ('../middleware/authenticateUser.js')
 class Orders{
     fetchOrders(req, res){
         const query = `
-        SELECT orderID,userID , bookID, orderDate
+        SELECT orderID,userID , orderID, orderDate
         From Orders;
         `
         db.query(query,
@@ -18,7 +18,7 @@ class Orders{
     }
     fetchOrder(req, res){
         const query = `
-        SELECT orderID,userID , bookID, orderDate
+        SELECT orderID,userID , orderID, orderDate
         From Orders
         Where orderID = ${req.params.id};
         `
