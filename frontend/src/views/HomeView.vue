@@ -10,7 +10,7 @@
 <div>
  <h1 style="margin-top:4rem;color:black;  font-family: 'Roboto Condensed', sans-serif;">Our line up</h1>
      <p style="margin-top:1rem;color:black;">"Craving a little magic in your day? Step into a world of whimsy and flavor at Sweet Sprinkle Bakery! <br>Discover a symphony of doughnut creations that redefine deliciousness.Your taste adventure awaits – dive into the extraordinary and awaken your senses!"</p>
-     <a class="btn" href="/products" role="button ">View Products</a>
+     <a class="btn" href="/bakery" role="button ">View Products</a>
 </div>
 
 <h1 style="margin-top:7rem;color:black;margin-bottom:2rem;"><span font size="7">Bakery</span></h1>
@@ -62,6 +62,7 @@ p{
   margin-left:2rem;
   width: 90%;
   margin-top:1rem;
+
 }
 .btn {
   color: black ;

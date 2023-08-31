@@ -62,7 +62,7 @@
 .site-footer
 {
   background-color:
-  #ec3f93;
+  #ec3d93;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;

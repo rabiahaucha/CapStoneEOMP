@@ -20,18 +20,18 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item ">
-                        <router-link to="/" class="nav-link"><span style="color:black;">HOME</span></router-link>
+                        <router-link to="/" class="nav-link"><span style="color:black;margin-left:0.3rem;">HOME</span></router-link>
                     </li>
                             <li class="nav-item dropdown">
-          <router-link to="/about" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span style="margin-left:0.3rem;color:black;">ABOUT</span>
+          <router-link to="/about" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color:#ec3d93;">
+            <span style="margin-left:1.3rem;color:black;">ABOUT US</span>
           </router-link>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/about">OUR STORY</a></li>
+            <li> <router-link to="/about" class="dropdown-item" exact>OUR STORY</router-link> </li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">FUNDRAISERS</a></li>
+            <li>   <router-link to="#fundraiser" class="dropdown-item" exact>FUNDRAISER</router-link></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">CAREERS</a></li>
+            <li>   <router-link to="#careers" class="dropdown-item" exact>CAREERS</router-link></li>
           </ul>
         </li>
                     <li class="nav-item ">
