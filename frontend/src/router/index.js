@@ -13,31 +13,31 @@ const routes = [
     component: () => import('../views/AboutView.vue')
   },
     {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
+    path: '/bakery',
+    name: 'bakery',
+    component: () => import('../views/BakeryView.vue')
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
+    path: '/checkout',
+    name: 'checkout',
+    component: () => import('../views/CheckoutView.vue')
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
+    path: '/contact',
+    name: 'contact',
+    component: () => import('../views/ContactView.vue')
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
+    path: '/admin',
+    name: 'admin',
+    component: () => import('../views/AdminView.vue')
   },
   {
-    
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
-  },
+    path: '/single/:id',
+    name: 'single',
+    props: true,
+    component: () => import( '../views/SingleView.vue')
+  }
 ]
 
 const router = createRouter({

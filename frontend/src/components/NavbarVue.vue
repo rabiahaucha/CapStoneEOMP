@@ -2,15 +2,13 @@
        <div>
         <Navbar class="navbar navbar-expand-lg" id="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"></a>
+                <a class="navbar-brand" href="/"></a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    
                     <router-link to="/">
                     <img src="https://i.postimg.cc/RFWk6nL9/Screenshot-2023-08-28-094033.png" style="width:10rem;" alt="logo">
                     </router-link>
                     </ul>
                 </div>
-                
              </Navbar>
 
  <nav class="navbar navbar-expand-lg" id="nav1">
@@ -24,13 +22,25 @@
                     <li class="nav-item ">
                         <router-link to="/" class="nav-link"><span style="color:black;">HOME</span></router-link>
                     </li>
+                            <li class="nav-item dropdown">
+          <router-link to="/about" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span style="margin-left:0.3rem;color:black;">ABOUT</span>
+          </router-link>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/about">OUR STORY</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">FUNDRAISERS</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">CAREERS</a></li>
+          </ul>
+        </li>
                     <li class="nav-item ">
-                        <router-link to="/about" class="nav-link"><span style="margin-left:0.3rem;color:black;">ABOUT</span></router-link>
+                        <router-link to="/bakery" class="nav-link"><span style="margin-left:1.3rem;color:black;">BAKERY</span></router-link>
                     </li>
                     <li class="nav-item ">
-                        <router-link to="/products" class="nav-link"><span style="margin-left:1.3rem;color:black;">PRODUCTS</span></router-link>
+                        <router-link to="/checkout" class="nav-link"><span style="margin-left:1.3rem;color:black;">CHECKOUT</span></router-link>
                     </li>
-                    <li class="nav-item ">
+                    <li>
                         <router-link to="/contact" class="nav-link"><span style="margin-left:1.3rem;color:black;">CONTACT</span></router-link>
                     </li>
                     <li class="nav-item ">
@@ -51,5 +61,4 @@
 </script>
 
 <style scoped>
-
 </style>

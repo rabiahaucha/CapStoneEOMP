@@ -1,35 +1,32 @@
 <template>
     <div>
-  <!-- Site footer -->
-  <footer class="site-footer">
+  <footer class="site-footer" style="margin-top:2rem;">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-6">
           <h6>About</h6>
-          <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+          <p class="text-justify">
+            "Welcome to the whimsical world of <i> Sweet Sprinkle Bakery</i>, where sugar and imagination blend to create confectionery wonders that dance on your taste buds. Our oven whispers secrets to the dough, crafting cupcakes and pastries that sparkle with delight. Savor each bite and indulge in a symphony of flavors, as we sprinkle a little magic into every treat we lovingly create.</p>
         </div>
 
         <div class="col-xs-6 col-md-3">
           <h6>Categories</h6>
           <ul class="footer-links">
-            <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-            <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-            <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-            <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-            <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+            <li><a href="">Cake</a></li>
+            <li><a href="">Special</a></li>
+            <li><a href="">Pocket</a></li>
+            <li><a href="">Glazed</a></li>
+            <li><a href="">Roll</a></li>
           </ul>
         </div>
 
         <div class="col-xs-6 col-md-3">
           <h6>Quick Links</h6>
           <ul class="footer-links">
-            <li><a href="http://scanfcode.com/about/">About Us</a></li>
-            <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-            <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-            <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-            <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
-          </ul>
+            <li><router-link to="/about">About Us</router-link></li>
+            <li><router-link to="/contact">Contact</router-link></li>
+            <li><router-link to="/">Home</router-link></li>
+         </ul>
         </div>
       </div>
       <hr>
@@ -37,19 +34,18 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
-       <a href="#">Scanfcode</a>.
+          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
+       <a href="#">Rabia Haucha</a> .
           </p>
         </div>
 
         <div class="col-md-4 col-sm-6 col-xs-12">
-          <ul class="social-icons">
-            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
-          </ul>
-        </div>
+            <ul class="social-icons">
+
+              <li><a class="github" href="https://github.com/dashboard"><i class="bi bi-github"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/rabia-ramadhani-haucha-94a119284/"><i class="bi bi-linkedin"></i></a></li>   
+            </ul>
+          </div>
       </div>
     </div>
 </footer>
@@ -65,15 +61,16 @@
 <style scoped>
 .site-footer
 {
-  background-color:#26272b;
+  background-color:
+  #ec3f93;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
-  color:#737373;
+  color:black;
 }
 .site-footer hr
 {
-  border-top-color:#bbb;
+  border-top-color:black;
   opacity:0.5
 }
 .site-footer hr.small
@@ -90,7 +87,7 @@
 }
 .site-footer a
 {
-  color:#737373;
+  color:white;
 }
 .site-footer a:hover
 {
@@ -108,11 +105,11 @@
 }
 .footer-links a
 {
-  color:#737373
+  color:black;
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#3366cc;
+  color:white;
   text-decoration:none;
 }
 .footer-links.inline li
@@ -131,7 +128,7 @@
   margin-left:6px;
   margin-right:0;
   border-radius:100%;
-  background-color:#33353d
+  background-color:black;
 }
 .copyright-text
 {
@@ -175,8 +172,8 @@
   font-size:13px
 }
 .social-icons a{
-  background-color:#eceeef;
-  color:#818a91;
+  background-color:black;
+  color:white;
   font-size:16px;
   display:inline-block;
   line-height:44px;
@@ -191,8 +188,8 @@
 }
 .social-icons a:active,.social-icons a:focus,.social-icons a:hover
 {
-  color:#fff;
-  background-color:#29aafe
+  
+  background-color:white;
 }
 .social-icons.size-sm a
 {
@@ -201,21 +198,9 @@
   width:34px;
   font-size:14px
 }
-.social-icons a.facebook:hover
+.social-icons a.github:hover
 {
-  background-color:#3b5998
-}
-.social-icons a.twitter:hover
-{
-  background-color:#00aced
-}
-.social-icons a.linkedin:hover
-{
-  background-color:#007bb6
-}
-.social-icons a.dribbble:hover
-{
-  background-color:#ea4c89
+  background-color:white;
 }
 @media (max-width:767px)
 {
