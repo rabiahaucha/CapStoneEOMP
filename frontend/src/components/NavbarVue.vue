@@ -8,6 +8,7 @@
                     <img src="https://i.postimg.cc/RFWk6nL9/Screenshot-2023-08-28-094033.png" style="width:10rem;" alt="logo">
                     </router-link>
                     </ul>
+                    <i class="bi bi-person-circle"></i>
                 </div>
              </Navbar>
 
