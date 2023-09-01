@@ -35,7 +35,7 @@
   color: white;
 }
 p{
-  margin-left:4rem;
+  margin-left:2rem;
   width: 90%;
   margin-top:2rem;
   color: black;
