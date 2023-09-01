@@ -43,9 +43,9 @@ fetchUsers(req, res){
         lastName, userAge, Gender, userRole,
         emailAdd, userPass, userProfile
         FROM Users
-        WHERE emailAdd = ${emailAdd};
+        WHERE emailAdd = ?;
         `
-        db.query(query, async (err, result)=>{
+        db.query(query, [emailAdd], async (err, result)=>{
             if(err) throw err
             if(!result?.length){
                 res.json({
