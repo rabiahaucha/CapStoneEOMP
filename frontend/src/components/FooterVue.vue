@@ -12,11 +12,11 @@
         <div class="col-xs-6 col-md-3">
           <h6>Categories</h6>
           <ul class="footer-links">
-            <li><a href="">Cake</a></li>
-            <li><a href="">Special</a></li>
-            <li><a href="">Pocket</a></li>
-            <li><a href="">Glazed</a></li>
-            <li><a href="">Roll</a></li>
+            <li><router-link to="/cake">Cake</router-link></li>
+            <li><router-link to="/special">Special</router-link></li>
+            <li><router-link to="/pocket">Pocket</router-link></li>
+            <li><router-link to="/glazed">Glazed</router-link></li>
+            <li><router-link to="/roll">Roll</router-link></li>
           </ul>
         </div>
 

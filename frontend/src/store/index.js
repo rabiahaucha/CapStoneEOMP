@@ -49,6 +49,21 @@ export default createStore({
     setUpdateProd(state, data){
       state.product = data
     },
+    setSpecial(state, data){
+      state.products = data
+    },
+    setGlazed(state, data){
+      state.products = data
+    },
+    setRoll(state, data){
+      state.products = data
+    },
+    setCake(state, data){
+      state.products = data
+    },
+    setPocket(state, data){
+      state.products = data
+    },
 
   },
   actions: {
@@ -128,6 +143,46 @@ export default createStore({
         location.reload()
       } catch (error) {
         console.log(error);
+      }
+    },
+    async fetchSpecial(context) {
+      try{
+        const {data} = await axios.get(`${donutUrl}special`)
+        context.commit("setSpecial", data.results)
+      }catch(e){
+        console.log(e)
+      }
+    },
+    async fetchGlazed(context) {
+      try{
+        const {data} = await axios.get(`${donutUrl}glazed`)
+        context.commit("setGlazed", data.results)
+      }catch(e){
+        console.log(e)
+      }
+    },
+    async fetchRoll(context) {
+      try{
+        const {data} = await axios.get(`${donutUrl}roll`)
+        context.commit("setRoll", data.results)
+      }catch(e){
+        console.log(e)
+      }
+    },
+    async fetchCake(context) {
+      try{
+        const {data} = await axios.get(`${donutUrl}cake`)
+        context.commit("setCake", data.results)
+      }catch(e){
+        console.log(e)
+      }
+    },
+    async fetchPocket(context) {
+      try{
+        const {data} = await axios.get(`${donutUrl}pocket`)
+        context.commit("setPocket", data.results)
+      }catch(e){
+        console.log(e)
       }
     },
 
