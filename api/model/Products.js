@@ -16,6 +16,76 @@ fetchProducts(req, res){
     })  
     })
 }
+fetchSpecial(req, res){
+    const query = `
+    SELECT * FROM Products
+    WHERE Category = "Special";
+    `
+    db.query(query,
+       (err, results) =>{
+        if (err) throw err
+    res.json({
+        status: res.statusCode,
+        results,
+    })  
+    })
+}
+fetchGlazed(req, res){
+    const query = `
+    SELECT * FROM Products
+    WHERE Category = "Glazed";
+    `
+    db.query(query,
+       (err, results) =>{
+        if (err) throw err
+    res.json({
+        status: res.statusCode,
+        results,
+    })  
+    })
+}
+fetchCake(req, res){
+    const query = `
+    SELECT * FROM Products
+    WHERE Category = "Cake";
+    `
+    db.query(query,
+       (err, results) =>{
+        if (err) throw err
+    res.json({
+        status: res.statusCode,
+        results,
+    })  
+    })
+}
+fetchPocket(req, res){
+    const query = `
+    SELECT * FROM Products
+    WHERE Category = "Pocket";
+    `
+    db.query(query,
+       (err, results) =>{
+        if (err) throw err
+    res.json({
+        status: res.statusCode,
+        results,
+    })  
+    })
+}
+fetchRoll(req, res){
+    const query = `
+    SELECT * FROM Products
+    WHERE Category = "Roll";
+    `
+    db.query(query,
+       (err, results) =>{
+        if (err) throw err
+    res.json({
+        status: res.statusCode,
+        results,
+    })  
+    })
+}
  fetchProduct(req,res){
     const query = `
     SELECT prodID, prodName,quantity,

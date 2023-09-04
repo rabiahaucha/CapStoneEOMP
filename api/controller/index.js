@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require("express")
 const bodyParser = require('body-parser')
 const routes = express.Router()
 const {users, products} = require('../model')
@@ -48,6 +48,21 @@ routes.patch('/product/:id', bodyParser.json(),(req, res)=>{
 })
 routes.delete('/product/:id',(req ,res)=>{
     products.deleteProduct(req, res)
+})
+routes.get('/special', (req, res)=>{
+    products.fetchSpecial(req, res)
+})
+routes.get('/glazed', (req, res)=>{
+    products.fetchGlazed(req, res)
+})
+routes.get('/cake', (req, res)=>{
+    products.fetchCake(req, res)
+})
+routes.get('/pocket', (req, res)=>{
+    products.fetchPocket(req, res)
+})
+routes.get('/roll', (req, res)=>{
+    products.fetchRoll(req, res)
 })
 
 
