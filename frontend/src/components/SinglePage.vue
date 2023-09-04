@@ -1,25 +1,36 @@
 <template>
     <div>
-        <div class="row" style="margin-top: 3rem display: flex; justify-content: center;">
-          <div
-            class="car col-12 col-sm-6 col-md-4 p-2" style="border: 2px solid"
-          >
-            <img
-              :src="$route.query.img"
-              :alt="$route.query.img"
-              style="width: 9rem; height: 9rem"
-              loading="lazy"
-            />
-            <div class="card-body">
-            
-              <h5 class="card-title">{{ $route.query.prodName }}</h5>
-              <h5 class="card-title">{{ $route.query.Category }}</h5>
-      
-              <p class="card-text">R {{ $route.query.amount }}</p>
-              <p class="card-text">Qty: {{ $route.query.quantity }}</p>
-              </div>
-              </div>
+      <section class="product-section">
+        <div class="product-grid">
+          <div class="card">
+            <div class="card-pill">
+              Sale
+            </div>
+            <img :src="$route.query.img"
+            :alt="$route.query.img"
+            style="width: 9rem; height: 9rem"
+            loading="lazy" >
+            <div class="flex-row space-between w-full mb-sm">
+              <p class="product-brand">{{ $route.query.prodName }}</p>
+              <p class="product-cat hide">{{ $route.query.Category }}</p>
+            </div>
+            <h1 class="product-name">R {{ $route.query.amount }}</h1>
+            <div class="flex-row">
+              <p class="price strike">R<span>35</span></p>
+              <p class="price">Qty: {{ $route.query.quantity }}</p>
+            </div>
+            <div class="btn-col">
+              <router-link to="/cart" class="icon-link">
+                Purchase
+                <svg fill="none" class="rubicons arrow-right-up" xmlns="http://www.w3.org/2000/svg" width="auto" height="auto" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="M17.9645 12.9645l.071-7h-7.071" stroke-linecap="round"></path>
+                  <path d="M5.9645 17.9645l12-12" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </router-link>
+            </div>
+          </div>
         </div>
+      </section>
       </div>
 </template>
 
@@ -40,5 +51,171 @@
 </script>
 
 <style scoped>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  background: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.product-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 4%;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+  padding: 24px;
+  background: #fff;
+  border-radius: 0;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.card-pill {
+  position: absolute;
+  padding: 6px 12px;
+  border-radius: 0;
+  color: #fff;
+  background: #000;
+  right: 0;
+  top: 0;
+  margin-right: 32px;
+  margin-top: 32px;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.card-img {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.product-brand {
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #646464;
+}
+
+.product-cat {
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #646464;
+  background: #f5f5f5;
+  padding: 6px 12px;
+  border-radius: 0;
+}
+
+.product-name {
+  font-size: 1.7rem;
+  line-height: 1;
+  margin-bottom: 6px;
+  margin-top: 0;
+  color: #000;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.mb-sm {
+  margin-bottom: 8px;
+}
+
+.price {
+  margin-right: 12px;
+}
+
+.strike {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.btn-col {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #fff;
+  background: #000;
+  padding: 1.4em 0;
+  border-radius: 0;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.rubicons {
+  width: 24px;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.icon-link:hover {
+  background: #333;
+}
+
+.icon-link:hover > .rubicons {
+  transform: translate(3px, -3px);
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 
 </style>

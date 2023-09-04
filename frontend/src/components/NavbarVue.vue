@@ -8,7 +8,9 @@
                     <img src="https://i.postimg.cc/RFWk6nL9/Screenshot-2023-08-28-094033.png" style="width:10rem;" alt="logo">
                     </router-link>
                     </ul>
-                 
+                    <router-link to="/login">
+                     <i class="bi bi-person-circle" style="margin-left:1rem;margin-right:0.2rem;"></i>
+                    </router-link>
                 </div>
              </Navbar>
 
@@ -30,24 +32,26 @@
           <ul class="dropdown-menu">
             <li> <router-link to="/about" class="dropdown-item" exact>OUR STORY</router-link> </li>
             <li><hr class="dropdown-divider"></li>
-            <li>   <router-link to="#fundraiser" class="dropdown-item" exact>FUNDRAISER</router-link></li>
+            <li> <router-link to="#fundraiser" class="dropdown-item" exact>FUNDRAISER</router-link></li>
             <li><hr class="dropdown-divider"></li>
-            <li>   <router-link to="#careers" class="dropdown-item" exact>CAREERS</router-link></li>
+            <li> <router-link to="#careers" class="dropdown-item" exact>CAREERS</router-link></li>
           </ul>
         </li>
                     <li class="nav-item ">
-                        <router-link to="/bakery" class="nav-link"><span style="margin-left:1.3rem;color:black;">BAKERY</span></router-link>
+                        <router-link to="/bakery" class="nav-link"><span style="margin-left:1rem;color:black;">BAKERY</span></router-link>
                     </li>
                     <li class="nav-item ">
-                        <router-link to="/checkout" class="nav-link"><span style="margin-left:1.3rem;color:black;">CHECKOUT</span></router-link>
+                        <router-link to="/cart" class="nav-link"><span style="margin-left:1rem;color:black;">CART</span></router-link>
                     </li>
                     <li>
-                        <router-link to="/contact" class="nav-link"><span style="margin-left:1.3rem;color:black;">CONTACT</span></router-link>
+                        <router-link to="/contact" class="nav-link"><span style="margin-left:1rem;color:black;">CONTACT</span></router-link>
                     </li>
                     <li class="nav-item ">
-                        <router-link to="/admin" class="nav-link"><span style="margin-left:1.3rem;color:black;">ADMIN</span></router-link>
+                        <router-link to="/admin" class="nav-link"><span style="margin-left:1rem;color:black;">ADMIN</span></router-link>
                     </li>
+           
                 </ul>
+              
               </div>
             </div>
           </nav>
@@ -62,4 +66,19 @@
 </script>
 
 <style scoped>
+
+i{
+  font-size: 4rem;
+}
+.li{
+  color:black;
+}
+.dropdown-item{
+  color: pink;
+}
+i{
+  color:black;
+}
+
+
 </style>

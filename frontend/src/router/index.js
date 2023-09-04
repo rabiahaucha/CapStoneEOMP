@@ -18,9 +18,9 @@ const routes = [
     component: () => import('../views/BakeryView.vue')
   },
   {
-    path: '/checkout',
-    name: 'checkout',
-    component: () => import('../views/CheckoutView.vue')
+    path: '/cart',
+    name: 'cart',
+    component: () => import('../views/CartView.vue')
   },
   {
     path: '/contact',
@@ -37,6 +37,11 @@ const routes = [
     name: 'single',
     props: true,
     component: () => import( '../views/SingleView.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import( '../views/loginView.vue') 
   }
 ]
 
