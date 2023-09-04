@@ -39,10 +39,30 @@ const routes = [
     component: () => import( '../views/SingleView.vue')
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import( '../views/loginView.vue') 
-  }
+    path: '/special',
+    name: 'special',
+    component: () => import( '../views/SpecialView.vue') 
+  },
+  {
+    path: '/glazed',
+    name: 'glazed',
+    component: () => import( '../views/GlazedView.vue') 
+  },
+  {
+    path: '/cake',
+    name: 'cake',
+    component: () => import( '../views/CakeView.vue') 
+  },
+  {
+    path: '/roll',
+    name: 'roll',
+    component: () => import( '../views/RollView.vue') 
+  },
+  {
+    path: '/pocket',
+    name: 'pocket',
+    component: () => import( '../views/PocketView.vue') 
+  },
 ]
 
 const router = createRouter({

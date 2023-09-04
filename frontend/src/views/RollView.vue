@@ -10,12 +10,12 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                  <router-link to="/bakery" class="nav-link">All</router-link>
+                    <router-link to="/bakery" class="nav-link">All</router-link>
                   <router-link to="/special" class="nav-link">Special</router-link>
                   <router-link to="/glazed" class="nav-link">Glazed</router-link>
                   <router-link to="/roll" class="nav-link">Roll</router-link>
                   <router-link to="/cake" class="nav-link">Cake</router-link>
-                  <router-link to=".pocket" class="nav-link">Pocket</router-link>
+                  <router-link to="/pocket" class="nav-link">Pocket</router-link>
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@
             }
         },
         mounted(){
-            this.$store.dispatch('fetchProducts')
+            this.$store.dispatch('fetchRoll')
         }
     }
 </script>
