@@ -89,7 +89,9 @@ fetchUsers(req, res){
  }
     async registerUser(req ,res){
     const data = req.body
+    //Encrypt password from database and then (SALT) append to encrypted password
     data.userPass = await hash(data.userPass,15)
+    //Payload 
     const user = {
     emailAdd : data.emailAdd,
     userPass : data.userPass
