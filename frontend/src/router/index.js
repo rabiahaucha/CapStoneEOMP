@@ -33,6 +33,11 @@ const routes = [
     component: () => import('../views/AdminView.vue')
   },
   {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/loginView.vue')
+  },
+  {
     path: '/single/:id',
     name: 'single',
     props: true,
