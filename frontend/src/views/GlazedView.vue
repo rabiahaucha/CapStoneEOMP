@@ -79,5 +79,7 @@ h5{
     border: black solid 2px;
   }
 
-
+  .nav-link{
+    color: #ec2c8c;
+}
 </style>

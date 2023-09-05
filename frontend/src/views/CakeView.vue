@@ -78,6 +78,8 @@ h5{
     background-color: black;
     border: black solid 2px;
   }
-
+  .nav-link{
+    color: #ec2c8c;
+}
 
 </style>

@@ -19,7 +19,7 @@
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>	
                                                 <div class="form-group mt-2">
-                                                    <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                    <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off"  >
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <a href="#" class="btn mt-4">submit</a>
@@ -59,7 +59,7 @@
 
 <script>
     export default {
-        
+ 
     }
 </script>
 

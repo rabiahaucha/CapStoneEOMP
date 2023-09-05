@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import router from '@/router'
 const donutUrl ="https://capstone-pllo.onrender.com/"
 export default createStore({
   state: {

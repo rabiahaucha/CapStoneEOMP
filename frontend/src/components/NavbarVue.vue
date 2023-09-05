@@ -8,7 +8,7 @@
                     <img src="https://i.postimg.cc/RFWk6nL9/Screenshot-2023-08-28-094033.png" style="width:10rem;" alt="logo">
                     </router-link>
                     </ul>
-                    <router-link to="/login">
+                    <router-link to="/login" class="text-hover">
                      <i class="bi bi-person-circle" style="margin-left:1rem;margin-right:0.2rem;"></i>
                     </router-link>
                 </div>
@@ -23,31 +23,31 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item ">
-                        <router-link to="/" class="nav-link"><span style="color:black;margin-left:0.3rem;">HOME</span></router-link>
+                        <router-link to="/" class="nav-link text-hover"><span style="color:black;margin-left:0.3rem;">HOME</span></router-link>
                     </li>
                             <li class="nav-item dropdown">
           <router-link to="/about" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color:#ec3d93;">
             <span style="margin-left:1.3rem;color:black;">ABOUT US</span>
           </router-link>
           <ul class="dropdown-menu">
-            <li> <router-link to="/about" class="dropdown-item" exact>OUR STORY</router-link> </li>
+            <li> <router-link to="/about" class="dropdown-item" style="color:black;" exact>OUR STORY</router-link> </li>
             <li><hr class="dropdown-divider"></li>
-            <li> <router-link to="#fundraiser" class="dropdown-item" exact>FUNDRAISER</router-link></li>
+            <li> <router-link to="#fundraiser" class="dropdown-item" style="color:black;" exact>FUNDRAISER</router-link></li>
             <li><hr class="dropdown-divider"></li>
-            <li> <router-link to="#careers" class="dropdown-item" exact>CAREERS</router-link></li>
+            <li> <router-link to="#careers" class="dropdown-item" style="color:black;" exact>CAREERS</router-link></li>
           </ul>
         </li>
                     <li class="nav-item ">
-                        <router-link to="/bakery" class="nav-link"><span style="margin-left:1rem;color:black;">BAKERY</span></router-link>
+                        <router-link to="/bakery" class="nav-link text-hover"><span style="margin-left:1rem;color:black;">BAKERY</span></router-link>
                     </li>
                     <li class="nav-item ">
-                        <router-link to="/cart" class="nav-link"><span style="margin-left:1rem;color:black;">CART</span></router-link>
+                        <router-link to="/cart" class="nav-link text-hover"><span style="margin-left:1rem;color:black;">CART</span></router-link>
                     </li>
                     <li>
-                        <router-link to="/contact" class="nav-link"><span style="margin-left:1rem;color:black;">CONTACT</span></router-link>
+                        <router-link to="/contact" class="nav-link text-hover"><span style="margin-left:1rem;color:black;">CONTACT</span></router-link>
                     </li>
                     <li class="nav-item ">
-                        <router-link to="/admin" class="nav-link"><span style="margin-left:1rem;color:black;">ADMIN</span></router-link>
+                        <router-link to="/admin" class="nav-link text-hover"><span style="margin-left:1rem;color:black;">ADMIN</span></router-link>
                     </li>
            
                 </ul>
@@ -68,17 +68,51 @@
 <style scoped>
 
 i{
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .li{
   color:black;
 }
-.dropdown-item{
-  color: pink;
+.nav-item{
+  color:#ec3d93;
 }
 i{
   color:black;
 }
 
+.text-hover {
+    background-image: linear-gradient(
+      to right,
+      #ec3d93,
+      #ec3d93 50%,
+      #000 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
 
+  .text-hover:before{
+    content: '';
+    background:#ec3d93;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .text-hover:hover {
+   background-position: 0;
+  }
+  .text-hover:hover::before{
+    width: 100%;
+  }
 </style>
