@@ -190,10 +190,10 @@ export default createStore({
         console.log(e)
       }
     },
-    async register(context, payload) {
+    async register(context, logs) {
       try {
         const {msg}  = (await axios.post
-          (`${donutUrl}user`, payload)).data
+          (`${donutUrl}user`, logs)).data
           if (msg) {
             sweet({
               title: "Registration",
@@ -220,7 +220,7 @@ export default createStore({
         const { msg, token, result } = (await axios.post(`${donutUrl}login`, payload)).data
         if(result) {
           context.commit("setUser", {result, msg});
-          cookies.set("User", {token, msg, result})
+          cookies.set("theUser", {token, msg, result})
           AuthenticateUser.applyToken(token)
           sweet({
             title: msg,

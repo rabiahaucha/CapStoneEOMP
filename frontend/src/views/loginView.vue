@@ -29,7 +29,7 @@
                             placeholder="Your Email"
                             id="logemail"
                             autocomplete="off"
-                            v-model="payload.emailAdd"
+                            v-model="logs.emailAdd"
                           />
                           <i class="input-icon uil uil-at"></i>
                         </div>
@@ -41,11 +41,11 @@
                             placeholder="Your Password"
                             id="logpass"
                             autocomplete="off"
-                            v-model="payload.userPass"
+                            v-model="logs.userPass"
                           />
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <a href="#" class="btn mt-4">submit</a>
+                        <button @click.prevent="login" class="btn mt-4">submit</button>
                         <p class="mb-0 mt-4 text-center">
                           <a href="#0" class="link">Forgot your password?</a>
                         </p>
@@ -156,7 +156,7 @@
 
 <script>
 import { useCookies } from 'vue3-cookies'
-const { cookies } = useCookies
+const { cookies } = useCookies()
 export default {
         data() {
     return {
@@ -168,7 +168,11 @@ export default {
     emailAdd: "",
     userPass: "",
     userProfile: "https://i.postimg.cc/3rZ0H0D8/profile-Image.png"
-          }
+          },
+          logs: {
+        emailAdd: "",
+      userPass: "",
+      }
         }
   },
   computed: {
@@ -181,14 +185,14 @@ export default {
       this.$store.dispatch('register', this.payload)
     },
     login() {
-      this.$store.dispatch('login', this.payload)
+      this.$store.dispatch('login', this.logs)
     }
   },
   beforeCreate() {
     this.$store.dispatch('fetchUsers')
   },
   mounted() {
-    console.log(cookies.get('User'))
+    console.log(cookies.get('theUser'))
   }
     }
 </script>
