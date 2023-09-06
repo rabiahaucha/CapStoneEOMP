@@ -35,7 +35,6 @@ fetchUsers(req, res){
         })
  }
  login(req ,res){
-    {
         const {emailAdd, userPass} = req.body
         // query
         const query = `
@@ -43,9 +42,9 @@ fetchUsers(req, res){
         lastName, userAge, Gender, userRole,
         emailAdd, userPass, userProfile
         FROM Users
-        WHERE emailAdd = ?;
+        WHERE emailAdd = '${emailAdd}';
         `
-        db.query(query, [emailAdd], async (err, result)=>{
+        db.query(query, async (err, result)=>{
             if(err) throw err
             if(!result?.length){
                 res.json({
@@ -63,12 +62,6 @@ fetchUsers(req, res){
                             emailAdd,
                             userPass
                         })
-                        // Save a token
-                        res.cookie("LegitUser",
-                        token, {
-                            maxAge: 3600000,
-                            httpOnly: true
-                        })
                         if(cResult) {
                             res.json({
                                 msg: "Logged in",
@@ -85,7 +78,6 @@ fetchUsers(req, res){
                     })
             }
         })
-    }
  }
     async registerUser(req ,res){
     const data = req.body
