@@ -3,7 +3,7 @@ const path = require('path')
 const app = express()
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
-const errorHandling = require("./middleware/Authenticate");
+const errorHandling = require("./middleware/ErrorHandeling");
 const port = +process.env.PORT || 4000
 
 app.use((req, res, next) => {
