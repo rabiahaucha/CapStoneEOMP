@@ -34,6 +34,8 @@ fetchUsers(req, res){
              })
         })
  }
+
+ //login
  login(req ,res){
         const {emailAdd, userPass} = req.body
         // query
