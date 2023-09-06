@@ -1,9 +1,8 @@
 <template>
     
         <div>
-            <h1>Admin</h1>
             <div>
-              <h2>Products</h2>
+              <h2 style="margin-top:2rem;color:black;">PRODUCTS</h2>
               <button class="btn"><AddProduct/></button>
               <div class="table-responsive" style="margin-top: 1rem" >
                 <table class="table" >
@@ -38,7 +37,7 @@
                 </table>
               </div>
             </div>
-            <h2>Users</h2>
+            <h2 style="margin-top:2rem;color:black;">USERS</h2>
             <button class="btn"><AddUser/></button>
             <div class="table-responsive" style="margin-top: 1rem">
               <table class="table" v-if="products">
@@ -110,5 +109,7 @@ export default {
 </script>
 
 <style scoped>
-
+.body{
+    font-family: "Inter", sans-serif;
+}
 </style>

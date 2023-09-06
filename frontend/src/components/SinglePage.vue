@@ -98,7 +98,7 @@ body {
   padding: 6px 12px;
   border-radius: 0;
   color: #fff;
-  background: #000;
+  background: #d4040f;
   right: 0;
   top: 0;
   margin-right: 32px;

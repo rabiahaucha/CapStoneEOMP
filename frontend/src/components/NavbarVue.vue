@@ -49,9 +49,7 @@
                     <li class="nav-item ">
                         <router-link to="/admin" class="nav-link text-hover"><span style="margin-left:1rem;color:black;">ADMIN</span></router-link>
                     </li>
-           
                 </ul>
-              
               </div>
             </div>
           </nav>

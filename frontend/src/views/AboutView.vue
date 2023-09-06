@@ -39,9 +39,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="carousel-caption">
-            <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code,
-                I don't know what will.This was the very best explanation of frameworks for brginners 
-                that I've ever seen.
+            <p>This bakery is a slice of heaven! Their plain old fashioned is out of this world, and I can't resist their warm, crusty doughnuts. The pastries are pure perfection, and the staff is always friendly and helpful. I could eat here every day.
             </p>
             <img src="https://i.imgur.com/lE89Aey.jpg">
             <div id="image-caption">Nick Doe</div>
@@ -49,18 +47,14 @@
         </div>
         <div class="carousel-item">
           <div class="carousel-caption">
-            <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code,
-              I don't know what will.This was the very best explanation of frameworks for brginners 
-              that I've ever seen.</p>
+            <p>I stumbled upon this bakery, and it's now my go-to spot. The doughnuts are like tiny works of art, and they taste as good as they look. Their attention to detail and commitment to quality truly shines through. I'm addicted!</p>
               <img src="https://i.imgur.com/QptVdsp.jpg" class="img-fluid">
               <div id="image-caption">Cromption Greves</div>
           </div>   
         </div>
         <div class="carousel-item">
           <div class="carousel-caption">
-            <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code,
-              I don't know what will.This was the very best explanation of frameworks for brginners 
-              that I've ever seen.</p>
+            <p>This bakery is a local treasure. The aroma of freshly baked goods hits you as soon as you walk in, and it's impossible to leave empty-handed. The diversity of their offerings, from gluten-free options to traditional treats, ensures there's something for everyone.</p>
               <img src="https://i.imgur.com/jQWThIn.jpg" class="img-fluid">
               <div id="image-caption">Harry Mon</div>
           </div>   

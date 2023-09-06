@@ -1,7 +1,11 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import { useCookies } from 'vue3-cookies'
+import sweet from 'sweetalert'
+import AuthenticateUser from '@/services/AuthenticateUser'
 import router from '@/router'
 const donutUrl ="https://capstone-pllo.onrender.com/"
+const { cookies } = useCookies
 export default createStore({
   state: {
     users: null,
@@ -184,6 +188,57 @@ export default createStore({
         context.commit("setPocket", data.results)
       }catch(e){
         console.log(e)
+      }
+    },
+    async register(context, payload) {
+      try {
+        const {msg}  = (await axios.post
+          (`${donutUrl}user`, payload)).data
+          if (msg) {
+            sweet({
+              title: "Registration",
+              text: msg,
+              icon: "success",
+              timer: 2000,
+            });
+            context.dispatch("fetchUsers");
+            location.reload()
+          } else {
+            sweet({
+              title: "Error",
+              text: msg,
+              icon: "error",
+              timer: 2000,
+            });
+          }
+        } catch (e) {
+          context.commit("setMsg", "An error has occured");
+        }
+  },
+    async login(context, payload) {
+      try {
+        const { msg, token, result } = (await axios.post(`${donutUrl}login`, payload)).data
+        if(result) {
+          context.commit("setUser", {result, msg});
+          cookies.set("User", {token, msg, result})
+          AuthenticateUser.applyToken(token)
+          sweet({
+            title: msg,
+            text: `Welcome back ${result?.firstName} ${result?.lastName}`,
+            icon: "success",
+            timer: 2000
+          })
+          router.push({name: 'home'})
+        } else {
+          sweet({
+            title: "Error",
+            text: msg,
+            icon: "error",
+            timer: 2000
+          })
+        }
+      } catch (e) {
+        context.commit("setMsg", "An error has occurred")
       }
     },
 
