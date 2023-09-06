@@ -1,4 +1,4 @@
-const { sign, verifyAToken } = require('jsonwebtoken');
+const { sign, verifyToken } = require('jsonwebtoken');
 require('dotenv').config()
 
 function createToken(user){
@@ -11,7 +11,7 @@ function createToken(user){
     })
 }
 
-function verifyAToken(req, res, next){
+function verifyToken(req, res, next){
    try{
         console.log("Get token from req.headers['authorization']");
         const token = req.headers["authorization"]
@@ -27,5 +27,5 @@ function verifyAToken(req, res, next){
 
 module.exports = {
     createToken,
-    verifyAToken
+    verifyToken
 }
