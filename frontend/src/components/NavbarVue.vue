@@ -47,7 +47,7 @@
                         <router-link to="/contact" class="nav-link text-hover"><span style="margin-left:1rem;color:black;">CONTACT</span></router-link>
                     </li>
                     <li class="nav-item ">
-                        <router-link to="/admin" class="nav-link text-hover"><span style="margin-left:1rem;color:black;">ADMIN</span></router-link>
+                        <router-link to="/admin" class="nav-link text-hover"><span style="margin-left:1rem;color:black;" v-show="isAdmin">ADMIN</span></router-link>
                     </li>
                 </ul>
               </div>
@@ -58,8 +58,32 @@
 </template>
 
 <script>
+import { useCookies } from 'vue3-cookies'
+const {cookies} = useCookies()
     export default {
-        
+        computed: {
+          user() {
+            return this.$store.state.user ||
+            cookies.get('theUser')
+          },
+          result() {
+          return this.user?.result
+        },
+        isAdmin() {
+          return this.result?.userRole?.toLowerCase() === "admin"
+        },
+        isUser() {
+          return this.result?.userRole?.toLowerCase() === "user"
+        },
+        isAdminUser() {
+          return this.result?.userRole?.toLowerCase() === "admin" || this.result?.userRole?.toLowerCase() === "user"
+        }
+        },
+        methods: {
+          logOut() {
+            this.$store.dispatch("logOut")
+          }
+        }
     }
 </script>
 

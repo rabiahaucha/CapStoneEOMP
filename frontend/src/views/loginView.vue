@@ -6,6 +6,9 @@
           <div class="col-12 text-center align-self-center py-5">
             <div class="section pb-5 pt-5 pt-sm-2 text-center">
               <h6 class="mb-0 pb-3">
+                <div>
+                  <router-link class="btn" to="/login" @click="logOut" style="margin-bottom: 2rem;">logout</router-link>
+                </div>
                 <span>Log In </span><span>Sign Up</span>
               </h6>
              <input
@@ -26,7 +29,7 @@
                             type="email"
                             name="logemail"
                             class="form-style"
-                            placeholder="Your Email"
+                            placeholder="Email"
                             id="logemail"
                             autocomplete="off"
                             v-model="logs.emailAdd"
@@ -38,7 +41,7 @@
                             type="password"
                             name="logpass"
                             class="form-style"
-                            placeholder="Your Password"
+                            placeholder="Password"
                             id="logpass"
                             autocomplete="off"
                             v-model="logs.userPass"
@@ -59,10 +62,10 @@
                         <div class="form-group">
                           <input
                             type="text"
-                            name="logname"
+                            name="payname"
                             class="form-style"
                             placeholder="Name"
-                            id="logname"
+                            id="payname"
                             autocomplete="off"
                             v-model="payload.firstName"
                           />
@@ -71,10 +74,10 @@
                         <div class="form-group mt-2">
                           <input
                             type="email"
-                            name="logemail"
+                            name="paysurname"
                             class="form-style"
                             placeholder="Surname"
-                            id="logemail"
+                            id="paysurname"
                             autocomplete="off"
                             v-model="payload.lastName"
                           />
@@ -83,10 +86,10 @@
                         <div class="form-group mt-2">
                           <input
                             type="email"
-                            name="logemail"
+                            name="payage"
                             class="form-style"
                             placeholder="Age"
-                            id="logemail"
+                            id="payage"
                             autocomplete="off"
                             v-model="payload.userAge"
                           />
@@ -95,10 +98,10 @@
                         <div class="form-group mt-2">
                           <input
                             type="email"
-                            name="logemail"
+                            name="paygender"
                             class="form-style"
                             placeholder="Gender"
-                            id="logemail"
+                            id="paygender"
                             autocomplete="off"
                             v-model="payload.Gender"
                           />
@@ -107,10 +110,10 @@
                         <div class="form-group mt-2">
                           <input
                             type="email"
-                            name="logemail"
+                            name="payemail"
                             class="form-style"
                             placeholder="Email"
-                            id="logemail"
+                            id="payemail"
                             autocomplete="off"
                             v-model="payload.emailAdd"
                           />
@@ -119,10 +122,10 @@
                         <div class="form-group mt-2">
                           <input
                             type="password"
-                            name="logpass"
+                            name="paypass"
                             class="form-style"
                             placeholder="Your Password"
-                            id="logpass"
+                            id="paypass"
                             autocomplete="off"
                             v-model="payload.userPass"
                           />
@@ -131,10 +134,10 @@
                         <div class="form-group mt-2">
                           <input
                             type="profileimage"
-                            name="logpass"
+                            name="payprofile"
                             class="form-style"
                             placeholder="Profile Image"
-                            id="logpass"
+                            id="payprofile"
                             autocomplete="off"
                             v-model="payload.userProfile"
                           />
@@ -177,7 +180,8 @@ export default {
   },
   computed: {
     user() {
-      return this.$store.state.user
+      return this.$store.state.user ||
+      cookies.get('theUser')
     }
   },
   methods: {
@@ -186,7 +190,10 @@ export default {
     },
     login() {
       this.$store.dispatch('login', this.logs)
-    }
+    },
+    logOut() {
+            this.$store.dispatch("logOut")
+          }
   },
   beforeCreate() {
     this.$store.dispatch('fetchUsers')

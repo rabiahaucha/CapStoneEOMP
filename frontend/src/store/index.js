@@ -5,7 +5,7 @@ import sweet from 'sweetalert'
 import AuthenticateUser from '@/services/AuthenticateUser'
 import router from '@/router'
 const donutUrl ="https://capstone-pllo.onrender.com/"
-const { cookies } = useCookies
+const { cookies } = useCookies()
 export default createStore({
   state: {
     users: null,
@@ -16,7 +16,7 @@ export default createStore({
     filtercategory: null,
     addContent: null,
     addUsers: null,
-    setUpdateProd: null
+    setUpdateProd: null,
   },
   getters: {
   },
@@ -53,6 +53,9 @@ export default createStore({
     },
     setUpdateProd(state, data){
       state.product = data
+    },
+    setUpdateUser(state, data){
+      state.user = data
     },
     setSpecial(state, data){
       state.products = data
@@ -141,10 +144,19 @@ export default createStore({
         console.log(error);
       }
     },
-    async editProduct(context, prodData){
+    async editProduct(context, edtProduct){
       try {
-        const response = await axios.patch(`${donutUrl}product/${prodData}`)
+        const response = await axios.patch(`${donutUrl}product/${edtProduct.prodID}`, edtProduct)
         context.commit('setUpdateProd', response.data)
+        location.reload()
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async editUser(context, edtUser){
+      try {
+        const response = await axios.patch(`${donutUrl}user/${edtUser.userID}`, edtUser)
+        context.commit('serUpdateUser', response.data)
         location.reload()
       } catch (error) {
         console.log(error);
@@ -218,6 +230,7 @@ export default createStore({
     async login(context, payload) {
       try {
         const { msg, token, result } = (await axios.post(`${donutUrl}login`, payload)).data
+        console.log(token, result, msg)
         if(result) {
           context.commit("setUser", {result, msg});
           cookies.set("theUser", {token, msg, result})
@@ -238,10 +251,14 @@ export default createStore({
           })
         }
       } catch (e) {
-        context.commit("setMsg", "An error has occurred")
+        context.commit((e), "An error has occurred")
       }
     },
-
+    async logOut(context) {
+      context.commit("setUser")
+      cookies.remove("theUser")
+      location.reload()
+    }
   },  
   modules: {
   }

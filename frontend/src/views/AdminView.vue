@@ -3,7 +3,7 @@
         <div>
             <div>
               <h2 style="margin-top:2rem;color:black;">PRODUCTS</h2>
-              <button class="btn"><AddProduct/></button>
+              <button class="btn"><AddProducts/></button>
               <div class="table-responsive" style="margin-top: 1rem" >
                 <table class="table" >
                   <thead>
@@ -28,7 +28,7 @@
                       <td>
                         <img :src="product.prodUrl" :alt="product.prodName" style="width: 5rem; height: 6rem" loading="lazy">
                       </td>
-                      <td><button class="btn btn-dark" @click="editProduct(product.prodID)">Edit</button></td>
+                      <td><button><EditProduct/></button></td>
                       <td>
                         <button class="btn btn-dark" @click="deleteProduct(product.prodID)">Delete</button>
                       </td>
@@ -67,7 +67,7 @@
                     <td>
                       <img :src="user.userProfile" :alt="user.userName" style="width: 7rem; height: 10rem" loading="lazy">
                     </td>
-                    <td> <button class="btn btn-dark" @click="editUser(user.userID)">Edit</button></td>
+                    <td> <button><EditUser/></button></td>
                     <td>
                       <button class="btn btn-dark" @click="deleteUser(user.userID)">Delete</button>
                     </td>
@@ -83,7 +83,17 @@
 </template>
 
 <script>
+import AddProducts from '@/components/AddProducts.vue'
+import AddUser from '@/components/AddUser.vue'
+import EditProduct from '@/components/EditProduct.vue'
+import EditUser from '@/components/EditUser.vue'
 export default {
+  components: {
+    AddProducts,
+    AddUser,
+    EditProduct,
+    EditUser
+  },
   
   computed: {
     products() {

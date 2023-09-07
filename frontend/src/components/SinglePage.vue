@@ -90,7 +90,7 @@ body {
   border-radius: 0;
   width: 100%;
   max-width: 420px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: grey 0px 8px 24px;
 }
 
 .card-pill {
@@ -121,7 +121,7 @@ body {
   line-height: 1;
   margin-top: 12px;
   margin-bottom: 0;
-  color: #646464;
+  color:#646464;
 }
 
 .product-cat {
@@ -181,7 +181,7 @@ body {
   justify-content: center;
   width: 100%;
   color: #fff;
-  background: #000;
+  background:black;
   padding: 1.4em 0;
   border-radius: 0;
   transition: background 0.3s ease;
@@ -200,7 +200,7 @@ body {
 }
 
 .icon-link:hover {
-  background: #333;
+  background:#ec2c8c;
 }
 
 .icon-link:hover > .rubicons {
