@@ -35,8 +35,7 @@ class Orders{
         const data = req.body
         //query
         const query = `
-        INSERT INTO Orders
-        SET ?;
+        INSERT INTO Orders SET VALUES(prodID, userID) (?,?)
         `
         db.query(query,
             [data],

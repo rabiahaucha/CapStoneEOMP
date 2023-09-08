@@ -63,6 +63,10 @@ routes.get('/pocket', (req, res)=>{
 routes.get('/roll', (req, res)=>{
     products.fetchRoll(req, res)
 })
+routes.post("/cart/prodID", bodyParser.json(), (req, res)=>{
+	const {userID} = req.body
+	Orders.addToCart(userID, res)
+})
 
 
 module.exports = {
