@@ -6,7 +6,12 @@
 
 <script>
     export default {
-        
+        methods:{
+    addToCart (
+      product){
+        this.$store.dispatch('addToCart',product);
+      },
+      },
     }
 </script>
 

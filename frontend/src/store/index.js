@@ -17,6 +17,8 @@ export default createStore({
     addContent: null,
     addUsers: null,
     setUpdateProd: null,
+    products:[],
+    cart:[]
   },
   getters: {
   },
@@ -72,6 +74,9 @@ export default createStore({
     setPocket(state, data){
       state.products = data
     },
+    addToCart(state,product){
+      state.cart.push(product)
+    }
 
   },
   actions: {
@@ -262,7 +267,7 @@ export default createStore({
       location.reload()
     },
     async addToCart(context){
-
+context.commit('addToCart, product')
     }
   },  
   modules: {
