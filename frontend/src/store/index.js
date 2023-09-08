@@ -266,9 +266,11 @@ export default createStore({
       cookies.remove("theUser")
       location.reload()
     },
+
+    // add to cart
     async addToCart(context){
-context.commit('addToCart, product')
-    }
+      context.commit('addToCart, product')
+          }
   },  
   modules: {
   }

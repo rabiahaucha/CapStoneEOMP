@@ -55,7 +55,15 @@
         },
         mounted(){
             this.$store.dispatch('fetchProducts')
-        }
+        },
+
+        methods:{
+    addToCart (prodID){
+      this.$store.dispatch('addToCart', prodID);
+      },
+      },
+
+
     }
 </script>
 
