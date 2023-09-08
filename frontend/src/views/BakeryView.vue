@@ -58,7 +58,7 @@
         },
 
         methods:{
-    addToCart (product){
+    addToCart(product){
       this.$store.dispatch('addToCart', product);
       },
       },
