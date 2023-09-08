@@ -4,10 +4,6 @@ const routes = express.Router()
 const {users, products} = require('../model')
 
 
-addToCart
-(
-userID, prodID, res
-)
 //User Router
 routes.get('/users', (req, res)=>{
     users.fetchUsers(req, res)

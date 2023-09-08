@@ -135,6 +135,17 @@ updateProduct(req,res){
              })
         })
  }
+ addToCart(req,res) {
+    const query = `
+    INSERT INTO Orders (userID, productID, orderDate)
+    VALUES (?, ?, NOW())
+    `;
+
+        
+const result = await 
+db.query(query, [userID, prodID]);
+
+ }
  deleteProduct(req,res){
     const query = `
     DELETE FROM Products
