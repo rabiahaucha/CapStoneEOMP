@@ -7,11 +7,17 @@
             <div class="section pb-5 pt-5 pt-sm-2 text-center">
               <h6 class="mb-0 pb-3">
                 <div>
-                  <router-link class="btn" to="/login" @click="logOut" style="margin-bottom: 2rem;">logout</router-link>
+                  <router-link
+                    class="btn"
+                    to="/login"
+                    @click="logOut"
+                    style="margin-bottom: 2rem"
+                    >logout</router-link
+                  >
                 </div>
                 <span>Log In </span><span>Sign Up</span>
               </h6>
-             <input
+              <input
                 class="checkbox"
                 type="checkbox"
                 id="reg-log"
@@ -48,10 +54,9 @@
                           />
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <button @click.prevent="login" class="btn mt-4">submit</button>
-                        <p class="mb-0 mt-4 text-center">
-                          <a href="#0" class="link">Forgot your password?</a>
-                        </p>
+                        <button @click.prevent="login" class="btn mt-4">
+                          submit
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -143,7 +148,9 @@
                           />
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <button @click.prevent="register" class="btn mt-4">submit</button>
+                        <button @click.prevent="register" class="btn mt-4">
+                          submit
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -158,50 +165,49 @@
 </template>
 
 <script>
-import { useCookies } from 'vue3-cookies'
-const { cookies } = useCookies()
+import { useCookies } from "vue3-cookies";
+const { cookies } = useCookies();
 export default {
-        data() {
+  data() {
     return {
       payload: {
-    firstName: "",
-    lastName: "",
-    userAge: "",
-    Gender: "",
-    emailAdd: "",
-    userPass: "",
-    userProfile: "https://i.postimg.cc/3rZ0H0D8/profile-Image.png"
-          },
-          logs: {
+        firstName: "",
+        lastName: "",
+        userAge: "",
+        Gender: "",
         emailAdd: "",
-      userPass: "",
-      }
-        }
+        userPass: "",
+        userProfile: "https://i.postimg.cc/3rZ0H0D8/profile-Image.png",
+      },
+      logs: {
+        emailAdd: "",
+        userPass: "",
+      },
+    };
   },
   computed: {
     user() {
-      return this.$store.state.user ||
-      cookies.get('theUser')
-    }
+      return this.$store.state.user || cookies.get("theUser");
+    },
   },
   methods: {
     register() {
-      this.$store.dispatch('register', this.payload)
+      this.$store.dispatch("register", this.payload);
     },
     login() {
-      this.$store.dispatch('login', this.logs)
+      this.$store.dispatch("login", this.logs);
     },
     logOut() {
-            this.$store.dispatch("logOut")
-          }
+      this.$store.dispatch("logOut");
+    },
   },
   beforeCreate() {
-    this.$store.dispatch('fetchUsers')
+    this.$store.dispatch("fetchUsers");
   },
   mounted() {
-    console.log(cookies.get('theUser'))
-  }
-    }
+    console.log(cookies.get("theUser"));
+  },
+};
 </script>
 
 <style scoped>

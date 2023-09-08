@@ -8,8 +8,8 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-    beforeEnter() {
-      if(!cookies.get('theUser')) {
+    beforeEnter: () => {
+      if(!cookies.get('theUser')){
         router.push({name: 'login'})
       }
     }

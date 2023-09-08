@@ -77,9 +77,11 @@
 </template>
 <script >
 
+
 </script>
 
 <style scoped>
+
 
 p{
   margin-left:4rem;

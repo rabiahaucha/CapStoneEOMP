@@ -258,6 +258,9 @@ export default createStore({
       context.commit("setUser")
       cookies.remove("theUser")
       location.reload()
+    },
+    async addToCart(context){
+      
     }
   },  
   modules: {

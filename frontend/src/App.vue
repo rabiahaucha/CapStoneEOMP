@@ -1,30 +1,39 @@
 <template>
-  <div>
- <Navbar/>
-  <router-view/>
-  <Footer/>
+  <div v-if="user">
+    <Navbar />
+     <router-view />
+    <Footer />
+  </div>
+  <div v-else>
+    <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
-import Footer from '@/components/FooterVue.vue'
-import Navbar from '@/components/NavbarVue.vue';
+import Footer from "@/components/FooterVue.vue";
+import Navbar from "@/components/NavbarVue.vue";
 
 export default {
-  components :{
+  components: {
     Footer,
-    Navbar
-}
-}
+    Navbar,
+  },
+
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
+};
 </script>
 <style>
 #app {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
 }
 
 nav {
