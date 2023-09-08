@@ -231,7 +231,9 @@ export default createStore({
       try {
         const { msg, token, result } = (await axios.post(`${donutUrl}login`, payload)).data
         console.log(token, result, msg)
-        if(result) {
+        if(result && token) {
+          localStorage.setItem("myData", JSON.stringify(result))
+          localStorage.setItem("token", token)
           context.commit("setUser", {result, msg});
           cookies.set("theUser", {token, msg, result})
           AuthenticateUser.applyToken(token)
@@ -260,7 +262,7 @@ export default createStore({
       location.reload()
     },
     async addToCart(context){
-      
+
     }
   },  
   modules: {

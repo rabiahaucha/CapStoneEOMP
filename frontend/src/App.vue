@@ -13,18 +13,32 @@
 <script>
 import Footer from "@/components/FooterVue.vue";
 import Navbar from "@/components/NavbarVue.vue";
+import { useCookies } from 'vue3-cookies'
+const { cookies } = useCookies()
 
 export default {
   components: {
     Footer,
     Navbar,
   },
+  created(){
+    const myData = JSON.parse(localStorage.getItem('myData'))
+    if(myData){
+      this.$store.commit("setUser", myData)
+    }
+    const token = localStorage.getItem("token")
+    if(token){
+      cookies.set("theUser", token, {
+        expires: 1
+      })
+    }
+  },
 
   computed: {
     user() {
       return this.$store.state.user;
     },
-  },
+  }
 };
 </script>
 <style>
