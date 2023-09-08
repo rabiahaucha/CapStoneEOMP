@@ -1,12 +1,12 @@
 <template>
   <div v-if="user">
     <Navbar />
-     <router-view />
+     <router-view/>
     <Footer />
   </div>
   <div v-else>
-    <router-view />
-    <Footer />
+    <loginView/>
+    <Footer/>
   </div>
 </template>
 
@@ -15,11 +15,12 @@ import Footer from "@/components/FooterVue.vue";
 import Navbar from "@/components/NavbarVue.vue";
 import { useCookies } from 'vue3-cookies'
 const { cookies } = useCookies()
-
+import loginView from './views/loginView.vue'
 export default {
   components: {
     Footer,
     Navbar,
+    loginView
   },
   created(){
     const myData = JSON.parse(localStorage.getItem('myData'))
