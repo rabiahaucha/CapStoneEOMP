@@ -38,7 +38,7 @@
                                     quantity: product.quantity
                                   }
                               }" class="btn">View More</router-link>
-                            <router-link to="/cart" class="btn" style="margin-left:1rem;" @click="addToCart(product)">Buy Now</router-link>
+                            <router-link to="/cart" class="btn" style="margin-left:1rem;"  @click="addToCart(product)">Buy Now</router-link>
                           </div>
             
                       </div>
@@ -58,8 +58,8 @@
         },
 
         methods:{
-    addToCart (prodID){
-      this.$store.dispatch('addToCart', prodID);
+    addToCart (product){
+      this.$store.dispatch('addToCart', product);
       },
       },
 

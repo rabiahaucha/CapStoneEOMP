@@ -11,14 +11,13 @@ export default createStore({
     users: null,
     user: null,
     products: null,
-    product: null,
+    product:null,
     filtername: null,
     filtercategory: null,
     addContent: null,
     addUsers: null,
     setUpdateProd: null,
-    products:[],
-    cart:[]
+    addToCart:null,
   },
   getters: {
   },
@@ -266,11 +265,14 @@ export default createStore({
       cookies.remove("theUser")
       location.reload()
     },
-
-    // add to cart
-    async addToCart(context){
-      context.commit('addToCart, product')
-          }
+    async addToCart(context, userData){
+      try {
+        const response = await axios.post(`${donutUrl}cart/prodID`, userData)
+        context.commit('addToCart', response.data)
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },  
   modules: {
   }
