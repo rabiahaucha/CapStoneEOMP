@@ -65,7 +65,7 @@ routes.get('/roll', (req, res)=>{
 })
 routes.post("/cart/prodID", bodyParser.json(), (req, res)=>{
 	const {userID, prodID} = req.body
-	Orders.addToCart(userID,prodID, res)
+	addToCart(userID,prodID, res)
 })
 
 
