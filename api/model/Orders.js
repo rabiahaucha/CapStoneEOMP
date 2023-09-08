@@ -59,21 +59,21 @@ class Orders{
                 if (err)throw err
                 res.json({
                     status: res.statusCode,
-                    msg:"The book order record was updated."
+                    msg:"The product order record was updated."
                 })
             })
     }
     deleteOrders(req, res){
         const query = `
         DELETE FROM Orders
-        WHERE orderID = ${req.params.id};
+        WHERE userID = ? AND prodID = ?;
         `
         db.query(query,
             (err)=>{
             if(err) throw err
             res.json({
                 status: res.statusCode,
-                msg:"The book order record was removed"
+                msg:"The product order record was removed"
             })
         })
     }
