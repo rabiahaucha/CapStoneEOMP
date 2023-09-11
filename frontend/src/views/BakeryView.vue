@@ -57,11 +57,6 @@
             this.$store.dispatch('fetchProducts')
         },
 
-        methods:{
-    addToCart(product){
-      this.$store.dispatch('addToCart', product);
-      },
-      },
 
 
     }

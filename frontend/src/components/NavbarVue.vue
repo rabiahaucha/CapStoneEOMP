@@ -8,7 +8,7 @@
                     <img src="https://i.postimg.cc/RFWk6nL9/Screenshot-2023-08-28-094033.png" style="width:10rem;" alt="logo">
                     </router-link>
                     </ul>
-                    <router-link to="/login" class="text-hover">
+                    <router-link to="/userprofile" class="text-hover">
                      <i class="bi bi-person-circle" style="margin-left:1rem;margin-right:0.2rem;"></i>
                     </router-link>
                 </div>
@@ -46,9 +46,14 @@
                     <li>
                         <router-link to="/contact" class="nav-link text-hover"><span style="margin-left:1rem;color:black;">CONTACT</span></router-link>
                     </li>
+                    
                     <li class="nav-item ">
                         <router-link to="/admin" class="nav-link text-hover"><span style="margin-left:1rem;color:black;" v-show="isAdmin">ADMIN</span></router-link>
                     </li>
+                    
+                    <li class="nav-item ">
+                      <router-link to="/login" class="nav-link text-hover"><span style="margin-left:1rem;color:black;">LOGIN</span></router-link>
+                  </li>
                 </ul>
               </div>
             </div>
