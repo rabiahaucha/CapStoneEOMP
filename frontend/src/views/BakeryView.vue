@@ -38,28 +38,45 @@
                                     quantity: product.quantity
                                   }
                               }" class="btn">View More</router-link>
-                            <router-link to="/cart" class="btn" style="margin-left:1rem;"  @click="addToCart(product)">Buy Now</router-link>
+                            <router-link @click="addToCart(product)" to="/cart" class="btn" style="margin-left:1rem;">Buy Now</router-link>
                           </div>
             
                       </div>
                   </div>
+                  <div class="else" v-else>
+                    <Spinner/>
+                 </div> 
     </div>
 </template>
 
 <script>
+import Spinner from '@/components/SpinnerVue.vue';
     export default {
+      components: {
+       Spinner
+      },
         computed:{
             products(){
                 return this.$store.state.products
             }
         },
         mounted(){
-            this.$store.dispatch('fetchProducts')
+            this.$store.dispatch('fetchProducts',)
         },
         methods: {
           addToCart(product) {
-            this.$store.dispatch('addToCart', product)
+            this.$store.dispatch('addCart', product);
           }
+        },
+        props:["prodID"],
+        created(){
+          this.$store.dispatch("fetchProducts",this.prodID)
+        },
+        computed:{
+        product(){
+          return this.$store.state.product
+        }
+          
         }
 
 

@@ -1,23 +1,22 @@
 <template>
-    <div>
-        <section class="product-section">
+    <div >
+        <section class="product-section" >
           <div class="product-grid">
-            <div class="card">
+            <div class="card" v-for="item in cart" :key="item.prodID">
               <div class="card-pill">
                 Sale
               </div>
-              <img :src="$route.query.img"
-              :alt="$route.query.img"
+              <img :src="item.img"
+              :alt="item.img"
               style="width: 9rem; height: 9rem"
               loading="lazy" >
               <div class="flex-row space-between w-full mb-sm">
-                <p class="product-brand">{{ $route.query.prodName }}</p>
-                <p class="product-cat hide">{{ $route.query.Category }}</p>
+                <p class="product-brand">{{ item.prodName }}</p>
+                <p class="product-cat hide">{{ item.Category }}</p>
               </div>
-              <h1 class="product-name">R {{ $route.query.amount }}</h1>
+              <h1 class="product-name">R {{ item.amount }}</h1>
               <div class="flex-row">
-                <p class="price strike">R<span>35</span></p>
-                <p class="price">Qty: {{ $route.query.quantity }}</p>
+                <p class="price">Qty: {{ item.quantity }}</p>
               </div>
               <div class="btn-col">
               </div>
@@ -29,16 +28,15 @@
 
 <script>
     export default {
+      props:["prodID"],
+      created() {
+        this.$store.dispatch('fetchFromCart')
+      },
         computed:{
-            products(){
-                return this.$store.state.products
+            cart() {
+              return this.$store.state.cart
             }
         },
-       methods:{
-    addToCart(product){
-      this.$store.dispatch('addToCart', product);
-      },
-      },
     }
 </script>
 

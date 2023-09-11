@@ -20,13 +20,8 @@
               <p class="price">Qty: {{ $route.query.quantity }}</p>
             </div>
             <div class="btn-col">
-              <router-link to="/cart" class="icon-link">
-                Purchase
-                <svg fill="none" class="rubicons arrow-right-up" xmlns="http://www.w3.org/2000/svg" width="auto" height="auto" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path d="M17.9645 12.9645l.071-7h-7.071" stroke-linecap="round"></path>
-                  <path d="M5.9645 17.9645l12-12" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-              </router-link>
+              <router-link @click="addToCart(product)" to="/cart" class="btn" style="margin-left:1rem;">Buy Now</router-link>
+
             </div>
           </div>
         </div>
@@ -34,9 +29,15 @@
       </div>
 </template>
 
+
 <script>
    
         export default {
+          methods: {
+          addToCart(product) {
+            this.$store.dispatch('addCart', product);
+          }
+        },
   props: ["prodID"],
   created() {
     this.$store.dispatch('fetchProduct', this.prodID)

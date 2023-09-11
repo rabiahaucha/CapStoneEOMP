@@ -8,16 +8,16 @@
                     <img src="https://i.postimg.cc/RFWk6nL9/Screenshot-2023-08-28-094033.png" style="width:10rem;" alt="logo">
                     </router-link>
                     </ul>
-                    <router-link to="/login" class="text-hover">
-                     <i class="bi bi-person-circle" style="margin-left:1rem;margin-right:0.2rem;"></i>
+                    <router-link to="/userprofile" class="text-hover">
+                     <i class="bi bi-person-circle" style="margin-left:0.5rem;margin-right:0.2rem;"></i>
                     </router-link>
-      
+                      <router-link class="btn" to="/login"  @click="logOut()" style="margin-top:2;margin-left:1rem;" ><i class="bi bi-box-arrow-right"></i></router-link  >
                 </div>
              </Navbar>
 
  <nav class="navbar navbar-expand-lg" id="nav1">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"></a>
+              <a class="navbar-brand" href="/"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -52,6 +52,10 @@
                     <li class="nav-item ">
                         <router-link to="/admin" class="nav-link text-hover"><span style="margin-left:1rem;color:black;" v-show="isAdmin">ADMIN</span></router-link>
                     </li>
+                    
+                    <li>
+                      <router-link to="/login" class="nav-link text-hover"><span style="color:black;">LOGIN</span></router-link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -121,6 +125,7 @@ i{
     -webkit-text-fill-color: transparent;
     transition: all 0.3s ease-in-out;
   }
+  
 
   .text-hover:before{
     content: '';
