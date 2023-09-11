@@ -1,17 +1,30 @@
 <template>
-    <div  v-for="product in products" :key="product.prodID">
-        <div class="card" style="width: 18rem;" >
-            <img src="" class="card-img-top" alt="">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div>
+        <section class="product-section">
+          <div class="product-grid">
+            <div class="card">
+              <div class="card-pill">
+                Sale
+              </div>
+              <img :src="$route.query.img"
+              :alt="$route.query.img"
+              style="width: 9rem; height: 9rem"
+              loading="lazy" >
+              <div class="flex-row space-between w-full mb-sm">
+                <p class="product-brand">{{ $route.query.prodName }}</p>
+                <p class="product-cat hide">{{ $route.query.Category }}</p>
+              </div>
+              <h1 class="product-name">R {{ $route.query.amount }}</h1>
+              <div class="flex-row">
+                <p class="price strike">R<span>35</span></p>
+                <p class="price">Qty: {{ $route.query.quantity }}</p>
+              </div>
+              <div class="btn-col">
+              </div>
             </div>
           </div>
-    </div>
-
-
-    
+        </section>
+        </div>   
 </template>
 
 <script>

@@ -17,7 +17,7 @@ export default createStore({
     addContent: null,
     addUsers: null,
     setUpdateProd: null,
-    addToCart:null,
+    addToCart:[],
   },
   getters: {
   },
@@ -73,8 +73,8 @@ export default createStore({
     setPocket(state, data){
       state.products = data
     },
-    addToCart(state,product){
-      state.cart.push(product)
+    addToCart(state, newProduct){
+      state.cart.push(newProduct)
     }
 
   },
@@ -263,14 +263,16 @@ export default createStore({
     async logOut(context) {
       context.commit("setUser")
       cookies.remove("theUser")
-      location.reload()
     },
-    async addToCart(context, userData){
-      try {
-        const response = await axios.post(`${donutUrl}cart/prodID`, userData)
-        context.commit('addToCart', response.data)
-      } catch (error) {
-        console.log(error);
+    addToCart({commit}, product){
+      commit('addToCart', product);
+    },
+    async fetchFromCart(context) {
+      try{
+        const {data} = await axios.get(`${donutUrl}orders`)
+        context.commit("setOrders", data.results)
+      }catch(e){
+        console.log(e)
       }
     },
   },  

@@ -10,7 +10,7 @@
                   <router-link
                     class="btn"
                     to="/login"
-                    @click="logOut"
+                    @click="logOut()"
                     style="margin-bottom: 2rem"
                     >logout</router-link
                   >
@@ -205,7 +205,7 @@ export default {
     this.$store.dispatch("fetchUsers");
   },
   mounted() {
-    console.log(cookies.get("theUser"));
+    cookies.get("theUser");
   },
 };
 </script>
