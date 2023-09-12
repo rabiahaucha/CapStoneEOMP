@@ -82,7 +82,7 @@
                         </div>
                         <div class="form-group mt-2">
                           <input
-                            type="email"
+                            type="text"
                             name="payage"
                             class="form-style"
                             placeholder="Age"
@@ -94,7 +94,7 @@
                         </div>
                         <div class="form-group mt-2">
                           <input
-                            type="email"
+                            type="etext"
                             name="paygender"
                             class="form-style"
                             placeholder="Gender"

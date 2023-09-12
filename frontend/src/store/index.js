@@ -17,7 +17,7 @@ export default createStore({
     addContent: null,
     addUsers: null,
     setUpdateProd: null,
-    cart:[],
+   cart:[],
   },
   getters: {
   },
@@ -268,17 +268,24 @@ export default createStore({
       context.commit("setUser")
       cookies.remove("theUser")
     },
-    addCart(context, product){
-      context.commit('addToCart', product);
-    },
-    async fetchFromCart(context) {
+   async checkoutProducts(item) {
       try{
-        const cartdata = JSON.parse(localStorage.getItem('cart'));
-        this.$store.commit('setCart', cartdata);
-      }catch(e){
-        console.log(e)
+         
+          CheckOutList.push(item);
+          localStorage.setItem('checkout', JSON.stringify(CheckOutList));
+      }catch(e) {
+          console.log(`Error message: ${e.message}`);
       }
-    },
+  },
+ async addToCart(){
+    try {
+      cart.push()
+      localStorage.setItem('checkout', JSON.stringify(cart))
+    } catch (error) {
+      alert(e)
+    }
+  }
+
   },  
   modules: {
   }

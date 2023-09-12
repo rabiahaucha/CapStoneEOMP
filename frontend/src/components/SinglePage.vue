@@ -20,7 +20,8 @@
               <p class="price">Qty: {{ $route.query.quantity }}</p>
             </div>
             <div class="btn-col">
-              <router-link @click="addToCart(product)" to="/cart" class="btn" style="margin-left:1rem;">Buy Now</router-link>
+              <!-- <router-link to="/cart" class="btn" style="margin-left:1rem;">Buy Now</router-link> -->
+              
 
             </div>
           </div>
@@ -34,9 +35,9 @@
    
         export default {
           methods: {
-          addToCart(product) {
-            this.$store.dispatch('addCart', product);
-          }
+          // addToCart(query) {
+          //   localStorage.setItem('cart', JSON.stringify(query))
+          // }
         },
   props: ["prodID"],
   created() {
