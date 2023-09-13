@@ -106,15 +106,12 @@ export default {
   sortedProducts() {
     let filteredProducts = this.products;
 
-    // Apply search filter
     if (this.searchQuery) {
       const query = this.searchQuery.toLowerCase();
       filteredProducts = filteredProducts.filter((product) =>
         product.prodName.toLowerCase().includes(query)
       );
     }
-
-    // Sort by selected type
     if (this.sortType === 'price') {
       return [...filteredProducts].sort((a, b) => a.amount - b.amount);
     } else if (this.sortType === 'name') {

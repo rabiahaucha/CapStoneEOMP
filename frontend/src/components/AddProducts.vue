@@ -42,6 +42,7 @@
           addForm(){
             this.$store.dispatch('addProduct', this.prodData)
             console.log(this.prodData);
+            location.reload()
           }
         }
     }

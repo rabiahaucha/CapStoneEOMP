@@ -41,22 +41,22 @@
           <div class="carousel-caption">
             <p>This bakery is a slice of heaven! Their plain old fashioned is out of this world, and I can't resist their warm, crusty doughnuts. The pastries are pure perfection, and the staff is always friendly and helpful. I could eat here every day.
             </p>
-            <img src="https://i.imgur.com/lE89Aey.jpg">
-            <div id="image-caption">Nick Doe</div>
+            <img src="https://i.postimg.cc/bwVKS3cf/s-1.jpg">
+            <div id="image-caption">Melanie Martinez</div>
           </div>   
         </div>
         <div class="carousel-item">
           <div class="carousel-caption">
             <p>I stumbled upon this bakery, and it's now my go-to spot. The doughnuts are like tiny works of art, and they taste as good as they look. Their attention to detail and commitment to quality truly shines through. I'm addicted!</p>
-              <img src="https://i.imgur.com/QptVdsp.jpg" class="img-fluid">
-              <div id="image-caption">Cromption Greves</div>
+              <img src="" class="img-fluid">
+              <div id="image-caption">Ridhaa Gabier</div>
           </div>   
         </div>
         <div class="carousel-item">
           <div class="carousel-caption">
             <p>This bakery is a local treasure. The aroma of freshly baked goods hits you as soon as you walk in, and it's impossible to leave empty-handed. The diversity of their offerings, from gluten-free options to traditional treats, ensures there's something for everyone.</p>
-              <img src="https://i.imgur.com/jQWThIn.jpg" class="img-fluid">
-              <div id="image-caption">Harry Mon</div>
+              <img src="https://i.postimg.cc/XJzxNDTp/C12-Justin-Scholtz-2-min-1.jpg" class="img-fluid">
+              <div id="image-caption">Justin Scholtz</div>
           </div>   
         </div>
       </div>
@@ -105,11 +105,11 @@ body{
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-color: rgb(233, 150, 150);
+  background-color: white;
   font-family: 'Open Sans';
 }
 #demo{
-  background: linear-gradient(112deg, #ffffff 50%, antiquewhite 50%);
+  background: linear-gradient(112deg, #ffffff 50%, #ec2c8c 50%);
   max-width: 900px;
   margin: auto;
 }
@@ -153,6 +153,7 @@ body{
   font-style: normal;
   font-size: 1rem;
   margin-top: 0.5rem;
+  color:black;
 }
 @media(max-width:767px){
   #image-caption{

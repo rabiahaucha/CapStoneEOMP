@@ -45,6 +45,11 @@ const routes = [
     component: () => import('../views/loginView.vue')
   },
   {
+    path: '/checkout',
+    name: 'checkout',
+    component: () => import('../views/CheckoutView.vue')
+  },
+  {
     path: '/userprofile',
     name: 'userprofile',
     props: true,
