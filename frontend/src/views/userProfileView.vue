@@ -1,44 +1,70 @@
 <template>
   <div>
-    <div>
-      <h1 class="text-center p-3 heading-text">My Account</h1>
-
-      <div class="card mx-auto my-3 p-5 w-75 user-card">
-        <div class="m-3 text-center">
-          <img
-            :src="$store.state.user?.userProfile"
-            :alt="$store.state.user?.firstName"
-            class="img-fluid mb-5"
-            style="max-width: 60%; border-radius: 50%;"
-          />
-
-          <h2 class="gold-text">
-            {{ $store.state.user?.firstName }} {{ $store.state.user?.lastName }}
-          </h2>
-          <cite>{{ $store.state.user?.userRole }}</cite>
-        </div>
-
-        <div>
-          <div class="card mb-5 p-3 info-card">
-            <span><strong>User ID: </strong>{{ $store.state.user?.userID }}</span> <br> <br>
-            <span><strong>Gender: </strong>{{ $store.state.user?.Gender}}</span> <br> <br>
-            <span><strong>Email: </strong>{{ $store.state.user?.emailAdd }}</span> <br> <br>
-            <span><strong>Age: </strong>{{ $store.state.user?.userAge }}</span> <br> <br>
-          </div>
-
-          <div class="d-flex justify-content-between">
-            <update-user-comp class="btn edit-btn" />
-            <button type="submit" class="btn del-btn" @click="confirmDelete">Delete Account</button>
-          </div>
-        </div>
-      </div>
+    <div class="car">
+      <div class="card" v-if="user" style="height: 30rem;">
+  <img :src="user.userProfile" class="card-img-top" :alt="user.firstName">
+  <div class="card-body">
+  <h5 class="card-title">ID: {{ user.userID }}</h5>
+  <h5 class="card-title">{{ user.firstName }} {{ user.lastName }}</h5>
+  <h5 class="card-text">{{ user.userRole }}</h5>
+  <button class="btn" @click="logOut">Log Out</button>
+  </div>
+  </div>
     </div>
+    <!-- <router-link to="/login" class="btn btn-dark" @click="deleteUserFUNC(user.userID)">Delete</router-link> -->
   </div>
 </template>
 
 <script>
-
+import { useCookies } from "vue3-cookies";
+const { cookies } = useCookies();
+// import EditProfile from '@/components/EditProfile.vue'
+// import ChangePass from '@/components/ChangePass.vue'
+    export default {
+      components: {
+        // EditProfile,
+        // ChangePass
+      },
+    computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
+    beforeCreate() {
+    this.$store.dispatch("fetchUser");
+    },
+    mounted() {
+    console.log(cookies.get("theUser"));
+    },
+    created() {
+      const storedUser = (localStorage.getItem("user"));
+      if (storedUser) {
+        this.user = JSON.parse(storedUser)
+      }
+      const data = JSON.parse(localStorage.getItem("user"));
+      if (data) {
+        this.$store.commit("setUser", data)
+      }
+    },
+    methods: {
+          logOut() {
+            this.$store.dispatch("logOut")
+          },
+          deleteUserFUNC(userID) {
+        this.$store.dispatch('deleteUserFUNC', userID);
+      },
+        },
+    }
 </script>
 
 <style scoped>
+
+img {
+  width: 14rem;
+}
+
+.car {
+  display: flex;
+  justify-content: center;
+}
 </style>

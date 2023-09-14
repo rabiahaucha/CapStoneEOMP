@@ -8,7 +8,7 @@
                     <img src="https://i.postimg.cc/RFWk6nL9/Screenshot-2023-08-28-094033.png" style="width:10rem;" alt="logo">
                     </router-link>
                     </ul>
-                    <router-link to="/userprofile" @click="test" class="text-hover">
+                    <router-link to="/userprofile"  class="text-hover">
                      <i class="bi bi-person-circle" style="margin-left:0.5rem;margin-right:0.2rem;"></i>
                     </router-link>
                       <router-link class="btn" to="/login"  @click="logOut()" style="margin-top:2;margin-left:1rem;" ><i class="bi bi-box-arrow-right"></i></router-link  >
@@ -76,7 +76,8 @@ const {cookies} = useCookies()
           return this.user?.result
         },
         isAdmin() {
-          return this.result?.userRole?.toLowerCase() === "admin"
+          return cookies.get('userRole') === 'admin' || (this.result?.userRole?.toLowerCase() === 'admin')
+
         },
         isUser() {
           return this.result?.userRole?.toLowerCase() === "user"
@@ -87,10 +88,11 @@ const {cookies} = useCookies()
         },
         methods: {
           logOut() {
+            cookies.remove('userRole')
             this.$store.dispatch("logOut")
           }
         }
-    }
+}
 </script>
 
 <style scoped>

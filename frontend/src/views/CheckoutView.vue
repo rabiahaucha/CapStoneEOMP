@@ -23,7 +23,7 @@
               <div class="exp-cvc">
                 <div class="expiration">
               <label for="expiry">Expiration date</label>
-                <input class="inputCard" name="expiry" id="expiry" type="text" minlength="4" required placeholder="00/00"/>
+                <input class="inputCard" name="expiry" id="expiry" type="text" minlength="4" maxlength="4" placeholder="00/00"/>
                 <br>
                 </div>
                 <div class="security">

@@ -23,9 +23,9 @@ export default {
     loginView
   },
   created(){
-    const myData = JSON.parse(localStorage.getItem('myData'))
-    if(myData){
-      this.$store.commit("setUser", myData)
+    const user = JSON.parse(localStorage.getItem('user'))
+    if(user){
+      this.$store.commit("setUser", user)
     }
     const token = localStorage.getItem("token")
     if(token){

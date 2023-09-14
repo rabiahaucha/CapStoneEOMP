@@ -48,7 +48,7 @@
         <div class="carousel-item">
           <div class="carousel-caption">
             <p>I stumbled upon this bakery, and it's now my go-to spot. The doughnuts are like tiny works of art, and they taste as good as they look. Their attention to detail and commitment to quality truly shines through. I'm addicted!</p>
-              <img src="" class="img-fluid">
+              <img src="https://i.postimg.cc/5tkcTCsc/IMG-5726-2.png" class="img-fluid">
               <div id="image-caption">Ridhaa Gabier</div>
           </div>   
         </div>

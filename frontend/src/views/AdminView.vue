@@ -69,7 +69,7 @@
                     </td>
                     <td> <button><EditUser/></button></td>
                     <td>
-                      <button class="btn btn-dark" @click="deleteUser(user.userID)">Delete</button>
+                      <button class="btn btn-dark" @click="deleteUser(user.userID)">Delete</button><button class="btn btn-dark" @click="deleteUser(user.userID)">Delete</button>
                     </td>
                   </tr>
                 </tbody>
@@ -139,7 +139,6 @@ orders:[],
   mounted() {
     this.$store.dispatch('fetchProducts');
     this.$store.dispatch('fetchUsers');
-    this.$store.dispatch('fetchOrders');
   },
   methods: {
     deleteUser(userID) {
@@ -149,13 +148,6 @@ orders:[],
       this.$store.dispatch('deleteProductFUNC', prodID);
     }
   },
-  fetchOrders(){
-    axios.get('/api/orders').then(response => {
-      this.orders = response.data
-    }).catch(error =>{
-      console.error('Error fetching orders',error)
-    })
-  }
 };
 </script>
 

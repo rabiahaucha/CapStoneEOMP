@@ -210,6 +210,15 @@ export default createStore({
         console.log(e)
       }
     },
+    async fetchUser(context, userID) {
+      try{
+        const {data} = await axios.get(`${donutUrl}user/${userID}`)
+        context.commit("setUser", data.results)
+        console.log(data.results);
+      }catch(e){
+        console.log(e)
+      }
+    },
     async register(context, logs) {
       try {
         const {msg}  = (await axios.post
@@ -240,8 +249,8 @@ export default createStore({
         const { msg, token, result } = (await axios.post(`${donutUrl}login`, payload)).data
         console.log(token, result, msg)
         if(result && token) {
-          localStorage.setItem("myData", JSON.stringify(result))
-          localStorage.setItem("token", token)
+          localStorage.setItem("user", JSON.stringify(result))
+          // localStorage.setItem("token", token)
           context.commit("setUser", {result, msg});
           cookies.set("theUser", {token, msg, result})
           AuthenticateUser.applyToken(token)
@@ -267,6 +276,13 @@ export default createStore({
     async logOut(context) {
       context.commit("setUser")
       cookies.remove("theUser")
+      const data = JSON.stringify(localStorage.getItem('user'));
+      if (data) {
+        localStorage.removeItem('user')
+        localStorage.removeItem('cart')
+        // localStorage.removeItem('myData')
+      }
+      router.push({name: 'login'})
     },
    async checkoutProducts(item) {
       try{
