@@ -9,14 +9,14 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form @submit.prevent="editForm" class="d-flex flex-column gap-5">
+                  <form @submit.prevent="edtForm" class="d-flex flex-column gap-5">
                     <input type="text" v-model="edtProduct.prodID" placeholder="id" name="" id="">
                     <input type="text" v-model="edtProduct.prodName" placeholder="name" name="" id="">
                     <input type="text" v-model="edtProduct.quantity" placeholder="quantity" name="" id="">
                     <input type="text" v-model="edtProduct.amount" placeholder="amount" name="" id="">
                     <input type="text" v-model="edtProduct.Category" placeholder="category" name="" id="">
                     <input type="text" v-model="edtProduct.prodUrl" placeholder="image" name="" id="">
-                    <button type="submit" class="btn">Save Changes</button>
+                    <button type="submit" class="btn" >Save Changes</button>
                    </form>
                 </div>
                 <div class="modal-footer">
@@ -42,8 +42,9 @@
     }
   },
   methods:{
-          editForm(){
+          edtForm(){
             this.$store.dispatch('editProduct', this.edtProduct)
+            location.reload()
           }
         }
     }

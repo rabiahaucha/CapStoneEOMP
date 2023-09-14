@@ -73,6 +73,32 @@
                     </td>
                   </tr>
                 </tbody>
+
+                  <h2 style="margin-top:2rem;">ORDERS</h2>
+                  <div class="table-responsive" style="margin-top: 1rem">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>OrderID</th>
+                          <th>UserID</th>
+                          <th>ProdID</th>
+                          <th>OrderDate</th>
+                        </tr>
+
+                      </thead>
+                      <tbody>
+                    <tr v-for="order in orders" :key="order.orderID">
+
+                      <td>{{ order.orderID }}</td>
+                      <td>{{ order.userID }}</td>
+                      <td>{{ order.prodID }}</td>
+                      <td>{{ order.orderDate }}</td>
+                    </tr>
+                    
+                      </tbody>
+                      </table>
+                </div>
+              
               </table>
               <div class="else" v-else>
                 <Spinner/>
@@ -87,6 +113,7 @@ import AddProducts from '@/components/AddProducts.vue'
 import AddUser from '@/components/AddUser.vue'
 import EditProduct from '@/components/EditProduct.vue'
 import EditUser from '@/components/EditUser.vue'
+import axios from 'axios'
 export default {
   components: {
     AddProducts,
@@ -94,8 +121,14 @@ export default {
     EditProduct,
     EditUser
   },
+
   
   computed: {
+    data(){
+      return{
+orders:[],
+      }
+    },
     products() {
       return this.$store.state.products;
     },
@@ -106,6 +139,7 @@ export default {
   mounted() {
     this.$store.dispatch('fetchProducts');
     this.$store.dispatch('fetchUsers');
+    this.$store.dispatch('fetchOrders');
   },
   methods: {
     deleteUser(userID) {
@@ -114,6 +148,13 @@ export default {
     deleteProduct(prodID) {
       this.$store.dispatch('deleteProductFUNC', prodID);
     }
+  },
+  fetchOrders(){
+    axios.get('/api/orders').then(response => {
+      this.orders = response.data
+    }).catch(error =>{
+      console.error('Error fetching orders',error)
+    })
   }
 };
 </script>
