@@ -93,6 +93,7 @@
 </template>
 
 <script>
+import sweet from "sweetalert"
 import Spinner from '@/components/SpinnerVue.vue';
 
 export default {
@@ -178,11 +179,20 @@ export default {
         data.push(newData)
 
         localStorage.setItem('cart', JSON.stringify(data))
-    }
+    },
+    addToCart() {
+      sweet({
+        title: 'Added to cart',
+        icon: 'success',
+        timer: 2000,
+
+      });
+    },
   },
+
   mounted() {
     this.$store.dispatch('fetchProducts');
-  }
+  },
 
 };
 

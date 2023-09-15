@@ -51,7 +51,7 @@
         </div>
         <div class="row mt-4 d-flex align-items-center">
           <div class="col-sm-6 order-md-2 text-right">
-         <router-link to="/checkout"> <button class="btn btn-dark mb-4 btn-lg pl-5 pr-5" >Checkout</button></router-link>
+         <router-link to="/checkout"> <button class="btn btn-dark mb-4 btn-lg pl-5 pr-5"  >Checkout</button></router-link>
           </div>
           <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
             <router-link to="/bakery">
