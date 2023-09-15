@@ -84,7 +84,7 @@ fetchUsers(req, res){
     async registerUser(req ,res){
     const data = req.body
     //Encrypt password from database and then (SALT) append to encrypted password
-    data.userPass = await hash(data.userPass,15)
+    data.userPass = await hash(data.userPass,10)
     //Payload 
     const user = {
     emailAdd : data.emailAdd,
@@ -107,7 +107,7 @@ fetchUsers(req, res){
     const data = req.body
     if(data.userPass) {
         data.userPass = 
-        hashSync(data.userPass, 15)
+        hashSync(data.userPass,10)
     }
     const query = `
     UPDATE Users
