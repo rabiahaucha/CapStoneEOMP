@@ -35,7 +35,7 @@
             <div class="btn">
             
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" ></svg>
-    <router-link to="/"> <span id="submit" @click="checkout">Submit</span> </router-link>
+    <router-link to="/"> <span id="submit" @click="checkout" style="color:black;text-decoration:none;">Submit</span> </router-link>
            
             </div>
             </div>
@@ -69,7 +69,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #C1BFFA;
+  background-color: white;
   font-family: inter, sans-serif;
 }
 
@@ -92,9 +92,9 @@ body {
   border-radius: 16px;
   background-color: white;
   
-  border: 2px solid #1B1B1B;
+  border: 2px solid black;
   box-sizing: border-box;
-  box-shadow: 6px 6px 0px #1B1B1B;
+  box-shadow: 6px 6px 0px black;
   border-radius: 8px;
 }
 
@@ -129,7 +129,7 @@ input {
   left: 1048px;
   top: 16px;
   background: #FFFFFF;
-  border: 2px solid #1B1B1B;
+  border: 2px solid black;
   box-sizing: border-box;
   border-radius: 16px;
   transition: 0.2s;
@@ -137,8 +137,8 @@ input {
 
 textarea:focus, input:focus{
   outline: none;
-  background: #F9E450;
-  border: 3px solid #1B1B1B;
+  background: #ec2c8c;
+  border: 3px solid black;
   border-radius: 16px;
 }
 
@@ -168,8 +168,8 @@ span {
 }
 
 .btn {
-  background-color: #F9E450;
-  border: 2px solid #1B1B1B;
+  background-color: #ec2c8c;
+  border: 2px solid black;
   box-sizing: border-box;
   border-radius: 16px;
   padding: 16px 32px 16px 16px;
@@ -191,16 +191,20 @@ span {
 }
 
 .btn:hover {
-  background: #FFBB38;
-  border: 4px solid #1B1B1B;
+  background: #ec2c8c;
+  border: 4px solid black;
   box-sizing: border-box;
-  box-shadow: 0px 0px 0px 4px #C1BFFA;
+  box-shadow: 0px 0px 0px 4px black;
   border-radius: 16px;
 }
 
 #exit {
   cursor: pointer;
 }
+::-webkit-input-placeholder { 
+  color: black;
+}
+
 
 
 </style>

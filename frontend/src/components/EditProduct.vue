@@ -44,7 +44,7 @@
   methods:{
           edtForm(){
             this.$store.dispatch('editProduct', this.edtProduct)
-            location.reload()
+            // location.reload()
           }
         }
     }

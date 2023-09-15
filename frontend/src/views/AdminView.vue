@@ -69,7 +69,7 @@
                     </td>
                     <td> <button><EditUser/></button></td>
                     <td>
-                      <button class="btn btn-dark" @click="deleteUser(user.userID)">Delete</button><button class="btn btn-dark" @click="deleteUser(user.userID)">Delete</button>
+                      <button class="btn btn-dark" @click="deleteUser(user.userID)">Delete</button>
                     </td>
                   </tr>
                 </tbody>
@@ -86,19 +86,19 @@
                         </tr>
 
                       </thead>
+                    </table>
                       <tbody>
                     <tr v-for="order in orders" :key="order.orderID">
 
+                      <td>{{ order.prodID }}</td>
                       <td>{{ order.orderID }}</td>
                       <td>{{ order.userID }}</td>
-                      <td>{{ order.prodID }}</td>
                       <td>{{ order.orderDate }}</td>
                     </tr>
                     
                       </tbody>
-                      </table>
+ 
                 </div>
-              
               </table>
               <div class="else" v-else>
                 <Spinner/>
@@ -122,7 +122,6 @@ export default {
     EditUser
   },
 
-  
   computed: {
     data(){
       return{
@@ -146,9 +145,9 @@ orders:[],
     },
     deleteProduct(prodID) {
       this.$store.dispatch('deleteProductFUNC', prodID);
-    }
-  },
-};
+    },
+  }
+  };
 </script>
 
 <style scoped>

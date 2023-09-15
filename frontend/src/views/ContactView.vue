@@ -6,7 +6,8 @@
             </div>
             <img src="https://i.ibb.co/02r9qQR/icons8-doughnut-94.png" alt="icons8-doughnut-94" style="width: 9rem;margin-top:2rem;">
             
-            <form action="#" method="post" id="contact_form">
+            <form   action="https://formspree.io/f/mwkdqoab"
+            method="POST" id="contact_form">
               <div class="name">
                 <label for="name"></label>
                 <input type="text" placeholder="My name is" name="name" id="name_input" 
@@ -20,7 +21,7 @@
                 <label for="email"></label>
                 <input type="email" placeholder="My e-mail is" name="email" id="email_input" 
                 minlength="3"
-                maxlength="20"
+                maxlength="30"
                 required
                 oninvalid="this.setCustomValidity('Please enter your Email Address')"
                 oninput="this.setCustomValidity('')">
@@ -50,8 +51,8 @@
               <div class="submit">
                 <input type="submit" value="Send Message" id="form_button" />
               </div>
-            </form><!-- // End form -->
-          </div><!-- // End #container -->
+            </form>
+          </div>
     </div>
 </template>
 

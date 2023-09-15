@@ -213,8 +213,8 @@ export default createStore({
     async fetchUser(context, userID) {
       try{
         const {data} = await axios.get(`${donutUrl}user/${userID}`)
-        context.commit("setUser", data.results)
-        console.log(data.results);
+        context.commit("setUser", data.result)
+        console.log(data.result);
       }catch(e){
         console.log(e)
       }
@@ -231,7 +231,6 @@ export default createStore({
               timer: 2000,
             });
             context.dispatch("fetchUsers");
-            location.reload()
           } else {
             sweet({
               title: "Error",
@@ -247,11 +246,10 @@ export default createStore({
     async login(context, payload) {
       try {
         const { msg, token, result } = (await axios.post(`${donutUrl}login`, payload)).data
-        console.log(token, result, msg)
-        if(result && token) {
+        if(result) {
+          context.commit("setUser", {result, msg});
           localStorage.setItem("user", JSON.stringify(result))
           // localStorage.setItem("token", token)
-          context.commit("setUser", {result, msg});
           cookies.set("theUser", {token, msg, result})
           AuthenticateUser.applyToken(token)
           sweet({

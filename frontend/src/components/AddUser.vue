@@ -46,7 +46,6 @@
   methods:{
           async addForm(){
             this.$store.dispatch('addUser', this.userData);
-            location.reload()
           },
         }
     }

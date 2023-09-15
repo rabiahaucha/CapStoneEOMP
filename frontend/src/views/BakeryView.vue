@@ -38,12 +38,12 @@
 
     <div class="row" style="margin-top: 3rem;" v-if="products">
       <div>
-        <button @click="sortByName" >Sort Name</button>
-        <button @click="sortByPrice">Sort Price</button>
+        <button @click="sortByName" class="custom-button">Sort Name</button>
+        <button @click="sortByPrice" class="custom-button">Sort Price</button>
         <div>
           <div>
-            <input type="text" v-model="searchQuery" placeholder="Search...">
-            <button @click="searchProducts">Search</button>
+            <input type="text" class="search-input" v-model="searchQuery" placeholder="Search...">
+            <button @click="searchProducts" class="search-button" >Search</button>
           </div>
         </div>
       </div>
@@ -210,5 +210,39 @@ h5 {
 
 .nav-link {
   color: #ec2c8c;
+}
+.custom-button {
+  background-color: #ec2c8c;
+  color: white;
+  padding: 5px 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px; 
+  margin-bottom:1rem;
+}
+
+.custom-button:hover {
+  background-color: #d81c7a; 
+}
+
+.search-input {
+  padding: 4px;
+  border: 1px solid #ec2c8c;
+  border-radius: 3px;
+  margin-right: 1px; 
+}
+
+.search-button {
+  background-color: #ec2c8c;
+  color: white;
+  padding: 6px 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #d81c7a; 
 }
 </style>

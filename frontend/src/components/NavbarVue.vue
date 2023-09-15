@@ -48,7 +48,7 @@
                     </li>
                     
                     <li class="nav-item ">
-                        <router-link to="/admin" class="nav-link text-hover"><span style="margin-left:1rem;color:black;" v-show="isAdmin">ADMIN</span></router-link>
+                        <router-link to="/admin" class="nav-link text-hover" style="margin-left:1rem;color:black;" v-show="isAdmin">ADMIN</router-link>
                     </li>
                     
                     
@@ -76,14 +76,13 @@ const {cookies} = useCookies()
           return this.user?.result
         },
         isAdmin() {
-          return cookies.get('userRole') === 'admin' || (this.result?.userRole?.toLowerCase() === 'admin')
-
+          return this.result?.userRole?.toLowerCase() === "admin"
         },
         isUser() {
           return this.result?.userRole?.toLowerCase() === "user"
         },
-        isAdminUser() {
-          return this.result?.userRole?.toLowerCase() === "admin" || this.result?.userRole?.toLowerCase() === "user"
+        isAdminUser(){
+       return this.result?.userRole.toLowerCase() === "admin" || this.result?.userRole?.toLowerCase() === "user"  
         }
         },
         methods: {
@@ -127,7 +126,10 @@ i{
     transition: all 0.3s ease-in-out;
   }
   
-
+  nav a.router-link-exact-active,
+  .li.active {
+    text-shadow: 3px 1px 5px rgba(255, 8, 226, 0.92) !important;
+  }
   .text-hover:before{
     content: '';
     background:#ec3d93;
@@ -146,4 +148,10 @@ i{
   .text-hover:hover::before{
     width: 100%;
   }
+  nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+
 </style>
