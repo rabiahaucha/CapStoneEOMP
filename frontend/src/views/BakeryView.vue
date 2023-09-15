@@ -179,9 +179,7 @@ export default {
         data.push(newData)
 
         localStorage.setItem('cart', JSON.stringify(data))
-    },
-    addToCart() {
-      sweet({
+     sweet({
         title: 'Added to cart',
         icon: 'success',
         timer: 2000,
