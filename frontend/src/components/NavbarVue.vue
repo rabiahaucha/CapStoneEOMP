@@ -48,8 +48,7 @@
                     </li>
                     
                     <li class="nav-item ">
-                        <router-link to="/admin" class="nav-link text-hover" style="margin-left:1rem;color:black;" 
-                        v-show="isAdmin" >ADMIN</router-link>
+                        <router-link to="/admin" class="nav-link text-hover" style="margin-left:1rem;color:black;"  >ADMIN</router-link>
                     </li>
                     
                     <li>
