@@ -74,24 +74,7 @@
                   </tr>
                 </tbody>
 
-                  <h2 style="margin-top:2rem;">ORDERS</h2>
-                  <div class="table-responsive" style="margin-top: 1rem">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>OrderID</th>
-                          <th>UserID</th>
-                          <th>ProdID</th>
-                          <th>OrderDate</th>
-                        </tr>
-
-                      </thead>
-                    </table>
-  
- 
-                </div>
-              </table>
-              <div class="else" v-else>
+                <div class="else" v-else>
                 <Spinner/>
               </div>
             </div>
