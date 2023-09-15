@@ -44,7 +44,7 @@
   methods:{
           edtForm(){
             this.$store.dispatch('editProduct', this.edtProduct)
-            // location.reload()
+            location.reload()
           }
         }
     }
@@ -55,7 +55,7 @@
     background-color: black;
   }
   .btn:hover {
-    color: #C11111;
+    color: #ec2c8c;
     background-color: white;
     
   }

@@ -56,9 +56,8 @@ const { cookies } = useCookies();
     background-color: black;
   }
   .btn:hover {
-    color: #C11111;
+    color:#ec2c8c;
     background-color: white;
-    border: black solid 2px;
   }
 li {
     text-decoration: none;

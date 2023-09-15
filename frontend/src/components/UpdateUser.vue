@@ -125,38 +125,5 @@
   </script>
   
   <style scoped>
-  .blue-bg {
-    background: #0a192f;
-  }
-  
-  .heading-text {
-    color: #ffd700;
-    font-family: "Montserrat Alternates", sans-serif;
-  }
-  .edit-users-btn {
-    background: #2d1128;
-    color: #ffd700;
-    border: 1px solid #ffd700;
-    padding: 5px;
-  }
-  
-  .edit-users-btn:hover {
-    background: #ffd700;
-    color: #2d1128;
-    border: 1px solid #2d1128;
-  }
-  
-  .edit-user-btn {
-    background: #0a192f;
-    color: #ffd700;
-    border: 3px solid #0a192f;
-  }
-  
-  .edit-user-btn:hover {
-    border: 3px solid #ffd700;
-  }
-  
-  .modal-content {
-    border: 2px solid #ffd700;
-  }
+ 
   </style>

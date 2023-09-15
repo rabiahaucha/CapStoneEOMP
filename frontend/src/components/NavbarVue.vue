@@ -48,9 +48,9 @@
                     </li>
                     
                     <li class="nav-item ">
-                        <router-link to="/admin" class="nav-link text-hover" style="margin-left:1rem;color:black;" v-show="isAdmin">ADMIN</router-link>
+                        <router-link to="/admin" class="nav-link text-hover" style="margin-left:1rem;color:black;" 
+                        v-show="isAdmin" >ADMIN</router-link>
                     </li>
-                    
                     
                     <li>
                       <router-link to="/login" class="nav-link text-hover" v-if="!user"><span style="color:black;">LOGIN</span></router-link>
@@ -78,12 +78,9 @@ const {cookies} = useCookies()
         isAdmin() {
           return this.result?.userRole?.toLowerCase() === "admin"
         },
-        isUser() {
-          return this.result?.userRole?.toLowerCase() === "user"
-        },
-        isAdminUser(){
-       return this.result?.userRole.toLowerCase() === "admin" || this.result?.userRole?.toLowerCase() === "user"  
-        }
+        // isUser() {
+        //   return this.result?.userRole?.toLowerCase() === "user"
+        // },
         },
         methods: {
           logOut() {

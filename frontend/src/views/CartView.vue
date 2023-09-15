@@ -6,7 +6,7 @@
           <div class="col-lg-12 col-md-12 col-12">
             <h3 class="display-5 mb-2 text-center">Shopping Cart</h3>
             <p class="mb-5 text-center">
-              <i class="text-info font-weight-bold">{{ cart.length }}</i> items in your cart
+              <i class="text-info font-weight-bold" style="color:#ec2c8c;">{{ cart.length }}</i> items in your cart
             </p>
             <table id="shoppingCart" class="table table-condensed table-responsive">
               <thead>
@@ -51,7 +51,7 @@
         </div>
         <div class="row mt-4 d-flex align-items-center">
           <div class="col-sm-6 order-md-2 text-right">
-         <router-link to="/checkout"> <button class="btn btn-primary mb-4 btn-lg pl-5 pr-5" >Checkout</button></router-link>
+         <router-link to="/checkout"> <button class="btn btn-dark mb-4 btn-lg pl-5 pr-5" >Checkout</button></router-link>
           </div>
           <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
             <router-link to="/bakery">
@@ -104,3 +104,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.text-info{
+  color:#ec2c8c !important;
+}
+
+</style>
