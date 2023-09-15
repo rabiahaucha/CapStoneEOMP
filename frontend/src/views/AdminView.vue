@@ -87,16 +87,7 @@
 
                       </thead>
                     </table>
-                      <tbody>
-                    <tr v-for="order in orders" :key="order.orderID">
-
-                      <td>{{ order.prodID }}</td>
-                      <td>{{ order.orderID }}</td>
-                      <td>{{ order.userID }}</td>
-                      <td>{{ order.orderDate }}</td>
-                    </tr>
-                    
-                      </tbody>
+  
  
                 </div>
               </table>
